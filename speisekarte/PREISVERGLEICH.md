@@ -1,6 +1,6 @@
 # Die Bratküche – Preis- und Rechtscheck
 
-Stand: September 2026 · Grundlage: Menüboard V3 (A1) · Aktuelles Board: [`index.html`](index.html) / [`Menueboard_V5_A1.pdf`](Menueboard_V5_A1.pdf)
+Stand: September 2026 · Grundlage: Menüboard V3 (A1) · Aktuelles Board: **V6** in [`v6/`](v6/LIESMICH.md) (zwei A1-Boards) · Einzel-Board V5: [`index.html`](index.html) / [`Menueboard_V5_A1.pdf`](Menueboard_V5_A1.pdf)
 
 ## Kurzfazit
 
@@ -107,6 +107,18 @@ Weitere Punkte, falls sie auf dich zutreffen:
 
 Das PDF druckst du auf A1 (594 × 841 mm) ohne Rand. Zum Bearbeiten öffnest du `index.html` in Chrome und speicherst über „Drucken → Als PDF speichern“ (Papierformat A1, Ränder „Keine“, Hintergrundgrafiken an).
 
+## Neu in V6: Avocado, Guacamole, Schafskäse und Currywurst
+
+| Gericht | Preis V6 | Vergleich | Einschätzung |
+|---|---|---|---|
+| Currywurst mit Hauspommes | 8,50 | Nürnberger Imbiss: Currywurst 5,90, mit Pommes 8,80 · Nürnberg im Schnitt 4,97 für die günstigste Currywurst (ohne Pommes) | 🟢 fair, etwas günstiger als die Nürnberger Konkurrenz |
+| Currywurst ohne Pommes | 5,50 | Nürnberg Ø 4,97 (günstigste Currywurst je Imbiss), Deutschland Ø 3,92 | 🟢 fair für die Region |
+| Extra Guacamole / Avocado / Schafskäse | je +1,50 | Hans im Glück: extra Avocadocreme 1,00 (München) bis 2,00 (Berlin) | 🟢 fair |
+| Guac ’n’ Roll, Gockel Guapo | 10,90 | 1 € über den anderen Specials, weil zwei Premium-Zutaten drauf sind | 🟢 fair (laut Kalkulation ca. 24–26 % Wareneinsatz) |
+| Salate mit Avocado | 10,90 | Preis bleibt gleich, die Avocado ist gratis dazugekommen | 🟢 großzügig, laut Kalkulation noch gut gedeckt (ca. 26–28 %) |
+
+**Achtung beim Käse-Namen:** „Schafskäse“ nur bei Käse aus Schafsmilch. „Feta“ ist geschützt und darf nur echter griechischer Feta heißen. Käse aus Kuhmilch heißt „Hirtenkäse“ oder „Salzlakenkäse“, sonst ist die Bezeichnung irreführend.
+
 ## Quellen
 
 - Goldies München: [grillfuerst.de](https://www.grillfuerst.de/magazin/ratgeber/tipps/goldies-smashburger-warum-deutschland-ploetzlich-auf-platte-burger-steht/), [burgerpreise.de](https://burgerpreise.de/goldies-preise/), [Uber Eats](https://www.ubereats.com/de/store/goldies-smashburger-munchen/IOds1JD9UISXMbubrHhuOQ)
@@ -114,6 +126,8 @@ Das PDF druckst du auf A1 (594 × 841 mm) ohne Rand. Zum Bearbeiten öffnest du 
 - Five Guys: [fastfood-preischeck.de](https://fastfood-preischeck.de/five-guys-preise/), [germanmenus.de](https://germanmenus.de/five-guys-menu/)
 - Hans im Glück: [fastfoodpreis-info.de](https://fastfoodpreis-info.de/hans-im-gluck-speisekarte-preise-deutschland/)
 - Peter Pane: [fastfood-preischeck.de](https://fastfood-preischeck.de/peter-pane-preise/)
+- Currywurst: [Currywurst-Preisindex 2026 (tripz.de)](https://www.tripz.de/reisemagazin/currywurst-preisindex-deutschland/), [blgastro.de](https://blgastro.de/blgastronews/currywurst-preisindex-2026-so-unterscheiden-sich-die-currywurst-preise-in-deutschen-grossstaedten/)
+- Avocado: [Hans im Glück Avocado-Burger (Extra Avocadocreme)](https://menu.hansimglueck-burgergrill.de/muenchen-koenigsplatz/details/avocado-burger-9422915), [freshplaza.de – Weltmarkt Avocados](https://www.freshplaza.de/article/9339627/ubersicht-weltmarkt-avocados/)
 - Dips: [McDonald’s (knowmenuprices.com)](https://knowmenuprices.com/mcdonalds-speisekarte-preise/), [Burgermeister (burgerpreise.de)](https://burgerpreise.de/burgermeister-preise/), [Imbiss-Beispiel (pommesmeier.de)](https://www.pommesmeier.de/speisekarte/)
 - Getränkepreise München: [Stadt München, Bierpreis Innenstadtwirte 2026](https://stadt.muenchen.de/dam/Home/Stadtverwaltung/Referat-fuer-Arbeit-und-Wirtschaft/presse/pm/PR-Meldungen-OF/Bierpreis-Innenstadtwirte_2026.pdf)
 - Rindfleischpreise: [agrarheute](https://www.agrarheute.com/markt/tiere/rekordpreise-fuer-rindfleisch-steak-luxusgut-636806), [Wochenblatt](https://www.wochenblatt-dlv.de/maerkte/rindfleisch-luxusgut-preise-rekordniveau-582385)
