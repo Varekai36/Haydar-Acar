@@ -1,0 +1,223 @@
+<!doctype html>
+<!--
+  Speisekarte – Vorlage (Stand September 2026)
+
+  Vor dem Druck anpassen:
+  1. Name und Slogan im <header> ersetzen.
+  2. Preise sind Richtpreise aus dem Marktvergleich (siehe PREISVERGLEICH.md).
+  3. ACHTUNG: Die Allergen- (Buchstaben) und Zusatzstoff-Kennzeichnungen (Zahlen)
+     sind BEISPIELE. Sie müssen vor dem Druck mit den Produktdatenblättern
+     eurer Lieferanten (Bun, Käse, Bacon, Saucen, Getränke …) abgeglichen werden.
+  4. Aussagen wie "frisch gewolft" oder "hausgemacht" nur stehen lassen, wenn sie stimmen.
+-->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f2e8;
+    --ink: #1f1b16;
+    --muted: #6b6259;
+    --accent: #b8321f;
+    --rule: #d9cfbf;
+    --box: #efe6d6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 16px/1.45 "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  }
+  .page { max-width: 1040px; margin: 0 auto; padding: 40px 16px 32px; }
+
+  header { text-align: center; padding-bottom: 20px; border-bottom: 3px double var(--ink); }
+  .brand {
+    font: 400 clamp(52px, 11vw, 96px)/0.9 "Bebas Neue", Impact, sans-serif;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .tagline { margin: 10px 0 0; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 13px; font-weight: 600; }
+
+  .columns { display: grid; grid-template-columns: 1fr; gap: 0 56px; margin-top: 28px; }
+  @media (min-width: 780px) { .columns { grid-template-columns: 1fr 1fr; } }
+
+  section { margin-bottom: 30px; break-inside: avoid; }
+  h2 {
+    font: 400 34px/1 "Bebas Neue", Impact, sans-serif;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin: 0 0 4px;
+  }
+  .intro { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+
+  .item { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+  .item:last-child { border-bottom: 0; }
+  .name { font-weight: 700; font-size: 17px; letter-spacing: 0.01em; }
+  .qty { font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 4px; }
+  .price { font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .desc { grid-column: 1 / -1; color: var(--muted); font-size: 14px; margin-top: 2px; }
+  sup { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; margin-left: 2px; }
+
+  .combo {
+    background: var(--ink); color: var(--paper);
+    padding: 16px 18px; margin: 4px 0 30px; border-radius: 4px;
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px;
+    break-inside: avoid;
+  }
+  .combo strong { font: 400 28px/1 "Bebas Neue", Impact, sans-serif; letter-spacing: 0.06em; }
+  .combo .price { font-size: 24px; }
+  .combo p { grid-column: 1 / -1; margin: 0; font-size: 14px; opacity: 0.85; }
+
+  .extras { background: var(--box); padding: 12px 14px; border-radius: 4px; font-size: 14px; }
+  .extras ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr auto; gap: 3px 12px; }
+  .extras li { display: contents; }
+  .extras b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  footer { border-top: 3px double var(--ink); margin-top: 8px; padding-top: 16px; font-size: 12px; color: var(--muted); }
+  footer p { margin: 0 0 8px; }
+  footer .legend { display: grid; grid-template-columns: 1fr; gap: 8px 32px; }
+  @media (min-width: 780px) { footer .legend { grid-template-columns: 1fr 1fr; } }
+  footer strong { color: var(--ink); }
+  .note { text-align: center; margin-top: 14px; font-weight: 600; color: var(--ink); }
+
+  @page { size: A4; margin: 10mm; }
+  @media print {
+    body { font-size: 12px; }
+    .page { padding: 0; max-width: none; }
+    header { padding-bottom: 10px; }
+    .brand { font-size: 56px; }
+    .tagline { font-size: 10px; margin-top: 6px; }
+    .columns { grid-template-columns: 1fr 1fr; gap: 0 32px; margin-top: 12px; }
+    section { margin-bottom: 12px; }
+    h2 { font-size: 24px; }
+    .intro { font-size: 11px; margin-bottom: 6px; }
+    .item { padding: 4px 0; }
+    .name, .price { font-size: 13.5px; }
+    .desc, .qty { font-size: 11px; margin-top: 0; }
+    .combo { padding: 10px 14px; margin: 2px 0 12px; }
+    .combo strong { font-size: 22px; }
+    .combo .price { font-size: 18px; }
+    .combo p, .extras { font-size: 11px; }
+    .extras { padding: 8px 12px; }
+    footer { padding-top: 8px; font-size: 9.5px; }
+    footer p { margin-bottom: 4px; }
+    footer .legend { grid-template-columns: 1fr 1fr; }
+    .note { margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1 class="brand">Burger Haus</h1>
+    <p class="tagline">Frisch gegrillt · 100 % Rindfleisch · Hausgemachte Saucen</p>
+  </header>
+
+  <div class="columns">
+    <div>
+      <section>
+        <h2>Burger</h2>
+        <p class="intro">Im Brioche-Bun mit Salat, Tomate, roten Zwiebeln und Haus-Sauce. Rindfleisch-Patty 150 g, frisch gewolft.</p>
+
+        <div class="item"><span class="name">Hamburger<sup>A,C,G,M</sup></span><span class="price">7,90</span>
+          <span class="desc">Rindfleisch-Patty, Gewürzgurke, Ketchup, Senf</span></div>
+        <div class="item"><span class="name">Cheeseburger<sup>A,C,G,M</sup></span><span class="price">8,90</span>
+          <span class="desc">Rindfleisch-Patty, Cheddar, Gewürzgurke, Haus-Sauce</span></div>
+        <div class="item"><span class="name">Bacon Cheeseburger<sup>A,C,G,M,2,3</sup></span><span class="price">10,50</span>
+          <span class="desc">Rindfleisch-Patty, Cheddar, knuspriger Bacon, Haus-Sauce</span></div>
+        <div class="item"><span class="name">Double Cheeseburger<sup>A,C,G,M</sup></span><span class="price">11,90</span>
+          <span class="desc">Zwei Rindfleisch-Pattys, doppelt Cheddar, Gewürzgurke, Haus-Sauce</span></div>
+        <div class="item"><span class="name">BBQ Bacon Burger<sup>A,C,G,M,2,3</sup></span><span class="price">11,50</span>
+          <span class="desc">Rindfleisch-Patty, Cheddar, Bacon, Röstzwiebeln, rauchige BBQ-Sauce</span></div>
+        <div class="item"><span class="name">Chili Cheese Burger<sup>A,C,G,M</sup></span><span class="price">10,50</span>
+          <span class="desc">Rindfleisch-Patty, Cheddar, Jalapeños, Chili-Cheese-Sauce</span></div>
+        <div class="item"><span class="name">Crispy Chicken Burger<sup>A,C,G,M</sup></span><span class="price">9,90</span>
+          <span class="desc">Knusprig paniertes Hähnchenbrustfilet, Krautsalat, Honig-Senf-Sauce</span></div>
+        <div class="item"><span class="name">Veggie Burger<sup>A,C,F,G,M</sup></span><span class="price">9,50</span>
+          <span class="desc">Pflanzliches Patty, Cheddar, Tomate, Salat, Haus-Sauce</span></div>
+      </section>
+
+      <div class="combo">
+        <strong>Mach’s zum Menü</strong><span class="price">+ 5,90</span>
+        <p>Zu jedem Burger: Pommes + Softdrink 0,33 l nach Wahl. Mit Süßkartoffel-Pommes + 1,50.</p>
+      </div>
+
+      <section>
+        <h2>Extras</h2>
+        <div class="extras">
+          <ul>
+            <li><span>Extra Rindfleisch-Patty 150 g</span><b>+ 3,00</b></li>
+            <li><span>Extra Cheddar<sup>G</sup></span><b>+ 1,00</b></li>
+            <li><span>Bacon<sup>2,3</sup></span><b>+ 1,50</b></li>
+            <li><span>Spiegelei<sup>C</sup></span><b>+ 1,50</b></li>
+            <li><span>Jalapeños</span><b>+ 0,80</b></li>
+            <li><span>Röstzwiebeln<sup>A</sup></span><b>+ 0,80</b></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <section>
+        <h2>Beilagen</h2>
+        <div class="item"><span class="name">Pommes</span><span class="price">3,90</span>
+          <span class="desc">Aus frischen Kartoffeln, mit Schale, doppelt frittiert</span></div>
+        <div class="item"><span class="name">Süßkartoffel-Pommes</span><span class="price">5,50</span></div>
+        <div class="item"><span class="name">Cheese Fries<sup>G</sup></span><span class="price">5,90</span>
+          <span class="desc">Pommes mit warmer Cheddar-Sauce</span></div>
+        <div class="item"><span class="name">Chili Cheese Fries<sup>G</sup></span><span class="price">6,50</span>
+          <span class="desc">Pommes mit Cheddar-Sauce, Jalapeños und Röstzwiebeln</span></div>
+        <div class="item"><span class="name">Onion Rings<sup>A</sup><span class="qty">8 Stück</span></span><span class="price">4,90</span></div>
+        <div class="item"><span class="name">Chicken Nuggets<sup>A</sup><span class="qty">6 Stück</span></span><span class="price">5,90</span></div>
+        <div class="item"><span class="name">Coleslaw<sup>C,M</sup></span><span class="price">3,50</span>
+          <span class="desc">Hausgemachter Krautsalat</span></div>
+      </section>
+
+      <section>
+        <h2>Dips</h2>
+        <div class="item"><span class="name">Ketchup oder Mayo<sup>C,M</sup></span><span class="price">0,50</span></div>
+        <div class="item"><span class="name">Hausgemachte Dips<sup>C,M</sup></span><span class="price">1,00</span>
+          <span class="desc">Burger-Sauce · Trüffel-Mayo · BBQ · Aioli</span></div>
+      </section>
+
+      <section>
+        <h2>Getränke</h2>
+        <div class="item"><span class="name">Coca-Cola<sup>1,11</sup><span class="qty">0,33 l</span></span><span class="price">3,50</span></div>
+        <div class="item"><span class="name">Coca-Cola Zero<sup>1,9,10,11</sup><span class="qty">0,33 l</span></span><span class="price">3,50</span></div>
+        <div class="item"><span class="name">Fanta Orange<span class="qty">0,33 l</span></span><span class="price">3,50</span></div>
+        <div class="item"><span class="name">Sprite<span class="qty">0,33 l</span></span><span class="price">3,50</span></div>
+        <div class="item"><span class="name">Mineralwasser<span class="qty">0,5 l</span></span><span class="price">3,20</span>
+          <span class="desc">Still oder sprudelnd</span></div>
+        <div class="item"><span class="name">Ayran<sup>G</sup><span class="qty">0,25 l</span></span><span class="price">2,50</span></div>
+        <div class="item"><span class="name">Milkshake<sup>G</sup><span class="qty">0,4 l</span></span><span class="price">5,90</span>
+          <span class="desc">Vanille · Schokolade · Erdbeere</span></div>
+      </section>
+
+      <section>
+        <h2>Dessert</h2>
+        <div class="item"><span class="name">Schoko-Brownie<sup>A,C,G</sup></span><span class="price">3,90</span></div>
+        <div class="item"><span class="name">Cookie<sup>A,C,G</sup></span><span class="price">2,50</span></div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div class="legend">
+      <p><strong>Allergene:</strong> A Glutenhaltiges Getreide · B Krebstiere · C Eier · D Fisch · E Erdnüsse · F Soja · G Milch/Laktose · H Schalenfrüchte · L Sellerie · M Senf · N Sesam · O Schwefeldioxid/Sulfite · P Lupinen · R Weichtiere</p>
+      <p><strong>Zusatzstoffe:</strong> 1 mit Farbstoff · 2 mit Konservierungsstoff · 3 mit Antioxidationsmittel · 4 mit Geschmacksverstärker · 5 geschwefelt · 6 geschwärzt · 7 gewachst · 8 mit Phosphat · 9 mit Süßungsmittel · 10 enthält eine Phenylalaninquelle · 11 koffeinhaltig · 12 chininhaltig</p>
+    </div>
+    <p>In unserer Küche werden alle genannten Allergene verarbeitet, Spuren sind daher in allen Speisen möglich. Fragen zu Allergenen beantwortet gern unser Team.</p>
+    <p class="note">Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.</p>
+  </footer>
+
+</div>
+</body>
+</html>
