@@ -1,8 +1,8 @@
 <!doctype html>
 <!--
-  Die Bratküche – Menüboard V4 (A1, 594 × 841 mm)
+  Die Bratküche – Menüboard V5 (A1, 594 × 841 mm)
 
-  Änderungen gegenüber V3: siehe PREISVERGLEICH.md, Abschnitt "Was in V4 geändert ist".
+  Änderungen gegenüber V3: siehe PREISVERGLEICH.md, Abschnitt "Was sich geändert hat".
   PDF erzeugen: Seite in Chrome öffnen → Drucken → "Als PDF speichern",
   Papierformat A1, Ränder "Keine", Hintergrundgrafiken an.
 -->
@@ -90,11 +90,13 @@
   .price { font: 400 72px/1 "Bebas Neue"; color: var(--gold); letter-spacing: .01em; }
   .head { display: flex; align-items: baseline; flex-wrap: wrap; }
   .tag {
-    align-self: center; margin-left: 22px; padding: 3px 12px 2px; border-radius: 99px;
-    font: 700 16px/1.2 "Barlow Condensed"; letter-spacing: .14em; border: 1.5px solid currentColor;
+    align-self: center; margin-left: 24px; padding: 6px 18px 5px 12px; border-radius: 99px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 700 25px/1 "Barlow Condensed"; letter-spacing: .12em; border: 2px solid currentColor;
   }
-  .tag.hot { color: var(--hot); }
-  .tag.veg { color: var(--veg); }
+  .tag svg { width: 28px; height: 28px; fill: currentColor; }
+  .tag.hot { color: var(--hot); background: rgba(232, 105, 58, .14); }
+  .tag.veg { color: var(--veg); background: rgba(157, 192, 139, .14); }
   .sub { font: 700 21px/1 "Barlow Condensed"; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; margin-top: 9px; }
   .desc { font: 400 25px/1.3 "Barlow"; color: var(--muted); margin-top: 6px; }
 
@@ -147,7 +149,7 @@
   .drinks h2 { font-size: 92px; margin: 0; }
   .drinks .claim { margin: 0; font-size: 40px; }
   .drinks .rule { margin: 8px 0 14px; }
-  .drink-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+  .drink-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
   .drink { padding: 12px 20px 10px; background: var(--tile); border: 1.5px solid rgba(244,237,226,.08); border-radius: 8px; }
   .drink strong { display: block; font: 500 27px/1.15 "Barlow"; }
   .drink small { display: block; font: 600 20px/1 "Barlow Condensed"; letter-spacing: .16em; color: var(--muted); margin-top: 8px; text-transform: uppercase; white-space: nowrap; }
@@ -165,6 +167,10 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chili" viewBox="0 0 24 24"><path d="M4.6 20.3c7 1.3 13.4-3.6 13.9-11.6.1-1.5-1.6-2.4-2.8-1.5-3 2.3-5.6 6.5-10.6 8.8-1.9.9-2.2 3.9-.5 4.3z"/><path d="M16.2 7.6c-.2-2 .9-3.7 3-4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20.5 3.5C11.5 3.3 4.6 7.6 4.6 14.6c0 1.9.6 3.5 1.5 4.7 1.6-5.2 5.2-8.7 10.3-10.6-4.3 2.8-7.4 6.4-8.7 11.5 1.2.6 2.6.9 4.1.9 6.4 0 9.6-6.4 8.7-17.6z"/></symbol>
+</svg>
 <div class="board" id="board">
 <div class="frame">
 
@@ -197,7 +203,7 @@
         <div class="sub">Oklahoma Smash</div>
         <div class="desc">Fein gehobelte Zwiebeln direkt auf der Platte mitgebraten, Cheddar, Burgersoße.</div></div></div>
       <div class="item"><span class="num">3</span><div>
-        <div class="head"><span class="name">Scharfmacher</span><span class="price">9,90</span><span class="tag hot">SCHARF</span></div>
+        <div class="head"><span class="name">Scharfmacher</span><span class="price">9,90</span><span class="tag hot"><svg><use href="#i-chili"/></svg>SCHARF</span></div>
         <div class="sub">Chili Cheese Smash</div>
         <div class="desc">Chili-Cheese-Soße, Cheddar und Jalapeños.</div></div></div>
       <div class="item"><span class="num">4</span><div>
@@ -205,7 +211,7 @@
         <div class="sub">Crispy Chicken Burger</div>
         <div class="desc">Hauspaniertes Hähnchenbrustfilet, Cheddar, Salat, Tomate, Burgersoße.</div></div></div>
       <div class="item"><span class="num">5</span><div>
-        <div class="head"><span class="name">Der Grünschnabel</span><span class="price">9,90</span><span class="tag veg">VEGGIE</span></div>
+        <div class="head"><span class="name">Der Grünschnabel</span><span class="price">9,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
         <div class="sub">Veggie Grillkäse</div>
         <div class="desc">Gegrillter Käse, gebratene Champignons, Salat, Tomate, Joghurt-Kräutersoße.</div></div></div>
 
@@ -220,8 +226,8 @@
         <p class="desc">Hauspaniert. 1 Stück = Ober- oder Unterflügel ohne Spitze.</p>
         <div class="tiles">
           <div><b>4</b><small>STÜCK</small><span class="price">5,90</span></div>
-          <div><b>8</b><small>STÜCK</small><span class="price">10,90</span></div>
-          <div><b>12</b><small>STÜCK</small><span class="price">14,90</span></div>
+          <div><b>8</b><small>STÜCK</small><span class="price">11,90</span></div>
+          <div><b>12</b><small>STÜCK</small><span class="price">16,90</span></div>
         </div>
         <p class="wings-foot">Ohne Beilage · Hauspommes dazu 3,90 · Dips siehe unten</p>
       </div>
@@ -230,12 +236,12 @@
         <div class="dips-head"><h2>Dips</h2><span class="claim">Eintunken ausdrücklich erwünscht.</span></div>
         <div class="rule" style="margin-top:10px"></div>
         <table>
-          <tr><td></td><th>100 ML</th><th>150 ML</th></tr>
-          <tr><td>Ketchup</td><td class="p">1,00</td><td class="p">1,50</td></tr>
-          <tr><td>Mayonnaise</td><td class="p">1,00</td><td class="p">1,50</td></tr>
-          <tr><td>Burgersoße · Joghurt-Kräuter · Honig-Senf</td><td class="p">1,50</td><td class="p">2,00</td></tr>
-          <tr><td>Käsesoße</td><td class="p">2,50</td><td class="p">3,50</td></tr>
-          <tr><td>Chili-Cheese-Soße <span class="tag hot" style="margin-left:14px">SCHARF</span></td><td class="p">2,50</td><td class="p">3,50</td></tr>
+          <tr><td></td><th>50 ML</th><th>100 ML</th></tr>
+          <tr><td>Ketchup</td><td class="p">0,50</td><td class="p">0,90</td></tr>
+          <tr><td>Mayonnaise</td><td class="p">0,50</td><td class="p">0,90</td></tr>
+          <tr><td>Burgersoße · Joghurt-Kräuter · Honig-Senf</td><td class="p">0,80</td><td class="p">1,50</td></tr>
+          <tr><td>Käsesoße</td><td class="p">1,50</td><td class="p">2,50</td></tr>
+          <tr><td>Chili-Cheese-Soße <span class="tag hot" style="margin-left:14px"><svg><use href="#i-chili"/></svg>SCHARF</span></td><td class="p">1,50</td><td class="p">2,50</td></tr>
         </table>
       </div>
     </div>
@@ -256,7 +262,7 @@
         <div class="sub">Burger Fries</div>
         <div class="desc">Der Burger ohne Brötchen: würziges Rinderhack, Käse- und Burgersoße, Gewürzgurke, rote Zwiebel.</div></div></div>
       <div class="item"><span class="num">8</span><div>
-        <div class="head"><span class="name">Chili Vanilli</span><span class="price">9,90</span><span class="tag hot">SCHARF</span></div>
+        <div class="head"><span class="name">Chili Vanilli</span><span class="price">9,90</span><span class="tag hot"><svg><use href="#i-chili"/></svg>SCHARF</span></div>
         <div class="sub">Chili Cheese Fries</div>
         <div class="desc">Rinderhack, Chili-Cheese-Soße, Jalapeños und Frühlingszwiebeln.</div></div></div>
       <div class="item"><span class="num">9</span><div>
@@ -264,7 +270,7 @@
         <div class="sub">Crispy Chicken Fries</div>
         <div class="desc">Panierte Chicken-Stücke, Käse- und Burgersoße, Gewürzgurke, Frühlingszwiebeln.</div></div></div>
       <div class="item"><span class="num">10</span><div>
-        <div class="head"><span class="name">Feta Morgana</span><span class="price">8,90</span><span class="tag veg">VEGGIE</span></div>
+        <div class="head"><span class="name">Feta Morgana</span><span class="price">8,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
         <div class="sub">Feta &amp; Kräuter</div>
         <div class="desc">Feta, Tomate, Gurke, rote Zwiebel, Kräutersoße und Petersilie.</div></div></div>
       <div class="item"><span class="num">11</span><div>
@@ -285,7 +291,7 @@
           <div class="sub">Crispy Chicken Salat</div>
           <div class="desc">Blattsalate, Tomate, Gurke, Karotte, panierte Chicken-Strips, geröstete Brotwürfel, Kräutersoße.</div></div></div>
         <div class="item"><span class="num">14</span><div>
-          <div class="head"><span class="name">Grillkäse-Wiese</span><span class="price">10,90</span><span class="tag veg">VEGGIE</span></div>
+          <div class="head"><span class="name">Grillkäse-Wiese</span><span class="price">10,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
           <div class="sub">Grillkäse Salat</div>
           <div class="desc">Blattsalate, gegrillter Käse, Tomate, Gurke, rote Zwiebel, Oliven, Honig-Senf-Soße.</div></div></div>
         <div class="item"><span class="num">16</span><div>
@@ -308,12 +314,11 @@
     <div class="drinks-head"><h2>Getränke</h2><span class="claim">Eiskalt dazu.</span></div>
     <div class="rule"></div>
     <div class="drink-grid">
-      <div class="drink"><strong>Wasser</strong><small>0,5 l · still/sprudel</small><span class="price">2,90</span></div>
-      <div class="drink"><strong>Coca-Cola</strong><small>0,33 l · koffeinhaltig</small><span class="price">3,90</span></div>
-      <div class="drink"><strong>Sprite</strong><small>0,33 l</small><span class="price">3,90</span></div>
-      <div class="drink"><strong>Paulaner Spezi</strong><small>0,5 l · koffeinhaltig</small><span class="price">3,90</span></div>
-      <div class="drink"><strong>Apfelschorle</strong><small>0,5 l</small><span class="price">3,50</span></div>
-      <div class="drink"><strong>Augustiner Hell</strong><small>0,5 l</small><span class="price">4,50</span></div>
+      <div class="drink"><strong>Wasser</strong><small>0,5 l · still/sprudel</small><span class="price">2,00</span></div>
+      <div class="drink"><strong>Coca-Cola</strong><small>0,33 l · koffeinhaltig</small><span class="price">2,50</span></div>
+      <div class="drink"><strong>Sprite</strong><small>0,33 l</small><span class="price">2,50</span></div>
+      <div class="drink"><strong>Paulaner Spezi</strong><small>0,5 l · koffeinhaltig</small><span class="price">2,50</span></div>
+      <div class="drink"><strong>Apfelschorle</strong><small>0,5 l</small><span class="price">2,50</span></div>
     </div>
   </section>
 
