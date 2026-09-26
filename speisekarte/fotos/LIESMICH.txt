@@ -1,0 +1,1 @@
+Fotos hier als JPG ablegen (Dateinamen siehe ../prototypen/LIESMICH.md). Sie erscheinen dann automatisch in den Prototypen.

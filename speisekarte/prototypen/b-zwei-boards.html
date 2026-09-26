@@ -1,0 +1,313 @@
+<!doctype html>
+<!--
+  Die Bratküche – PROTOTYP B: zwei A1-Boards nebeneinander (Burger | Loaded Fries & mehr)
+  mit großen Hauptfotos, Zutaten-Pfeilen und Foto-Karten.
+  Fotos: als ../fotos/hero-burger.jpg, ../fotos/01-klassiker.jpg usw. ablegen (Liste in FOTOS.md).
+-->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bratküche Prototyp B</title>
+<style>
+  @font-face { font-family: "Bebas Neue"; src: url(../fonts/bebas-neue-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "DM Serif Display"; src: url(../fonts/dm-serif-display-latin-400-normal.woff2) format("woff2"); font-style: normal; }
+  @font-face { font-family: "DM Serif Display"; src: url(../fonts/dm-serif-display-latin-400-italic.woff2) format("woff2"); font-style: italic; }
+  @font-face { font-family: "Barlow Condensed"; src: url(../fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Barlow Condensed"; src: url(../fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); font-weight: 700; }
+  @font-face { font-family: "Barlow"; src: url(../fonts/barlow-latin-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Barlow"; src: url(../fonts/barlow-latin-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "Barlow"; src: url(../fonts/barlow-latin-500-normal.woff2) format("woff2"); font-weight: 500; }
+  @font-face { font-family: "Caveat"; src: url(../fonts/caveat-latin-600-normal.woff2) format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Caveat"; src: url(../fonts/caveat-latin-700-normal.woff2) format("woff2"); font-weight: 700; }
+
+  :root { --bg:#0e0d0b; --cream:#f4ede2; --muted:#ada497; --gold:#cfa461; --hot:#e8693a; --veg:#9dc08b;
+          --line:rgba(244,237,226,.09); --tile:rgba(255,255,255,.025); }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: #070706; }
+  .board { width: 2245px; height: 3179px; position: relative; overflow: hidden; color: var(--cream); font-family: "Barlow", sans-serif;
+           background: radial-gradient(ellipse at 50% 18%, #1a1814 0%, var(--bg) 60%); zoom: var(--z, 1); }
+  .board + .board { margin-top: 40px; }
+  .frame { position: absolute; inset: 38px; border: 1.5px solid rgba(207,164,97,.22); border-radius: 16px; padding: 50px 92px 0; display: flex; flex-direction: column; }
+  header { text-align: center; }
+  .title-row { display: flex; align-items: center; gap: 80px; }
+  .title-row::before, .title-row::after { content: ""; flex: 1; height: 2px; background: var(--gold); opacity: .9; }
+  h1 { margin: 0; font: 400 157px/1 "Bebas Neue"; letter-spacing: .34em; margin-right: -.34em; }
+  .claim { margin: 20px 0 0; font: italic 400 59px/1 "DM Serif Display"; color: var(--gold); }
+  .strip { margin: 22px 0 0; font: 600 23px/1 "Barlow Condensed"; letter-spacing: .32em; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 34px; }
+  .strip i { width: 13px; height: 13px; background: var(--gold); transform: rotate(45deg); display: inline-block; }
+  .steps { display: flex; align-items: center; gap: 0; margin-top: 34px; }
+  .step { flex: 1; display: flex; align-items: center; gap: 30px; padding: 16px 32px; background: var(--tile); border: 1.5px solid rgba(207,164,97,.28); border-radius: 10px; }
+  .step b { font: 400 88px/.9 "Bebas Neue"; color: var(--gold); }
+  .step strong { display: block; font: 700 34px/1.1 "Barlow Condensed"; letter-spacing: .02em; text-transform: uppercase; }
+  .step span { font: italic 400 25px/1.3 "Barlow"; color: var(--muted); }
+  .step-arrow { width: 96px; height: 60px; flex: none; margin: 0 6px; }
+  .kicker { font: 600 21px/1 "Barlow Condensed"; letter-spacing: .36em; color: var(--gold); text-transform: uppercase; }
+  h2 { margin: 4px 0 0; font: 400 136px/.9 "Bebas Neue"; letter-spacing: .005em; }
+  .rule { height: 2px; background: var(--gold); margin: 12px 0 14px; }
+  .intro { font: 400 25px/1.3 "Barlow"; color: var(--muted); margin: 0 0 4px; }
+  .name { font: 400 63px/1 "DM Serif Display"; margin-right: 18px; }
+  .price { font: 400 72px/1 "Bebas Neue"; color: var(--gold); letter-spacing: .01em; }
+  .head { display: flex; align-items: baseline; flex-wrap: wrap; }
+  .sub { font: 700 21px/1 "Barlow Condensed"; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; margin-top: 9px; }
+  .desc { font: 400 25px/1.3 "Barlow"; color: var(--muted); margin-top: 6px; }
+  .tag { align-self: center; margin-left: 24px; padding: 6px 18px 5px 12px; border-radius: 99px; display: inline-flex; align-items: center; gap: 8px;
+         font: 700 25px/1 "Barlow Condensed"; letter-spacing: .12em; border: 2px solid currentColor; white-space: nowrap; }
+  .tag svg { width: 28px; height: 28px; fill: currentColor; }
+  .tag.hot { color: var(--hot); background: rgba(232,105,58,.14); }
+  .tag.veg { color: var(--veg); background: rgba(157,192,139,.14); }
+  .box { border: 2px solid var(--gold); border-radius: 12px; padding: 18px 34px; background: linear-gradient(160deg, rgba(207,164,97,.07), rgba(207,164,97,0) 55%); }
+  .box-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .box-title { font: italic 400 51px/1 "DM Serif Display"; color: var(--gold); }
+  .box-note { font: 600 16px/1 "Barlow Condensed"; letter-spacing: .3em; color: var(--muted); text-transform: uppercase; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1.5px solid var(--line); font: 500 28px/1.2 "Barlow"; }
+  .row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .row .price { font-size: 56px; }
+  .wings { background: linear-gradient(165deg, #2a2219 0%, #14110d 70%); position: relative; }
+  .wings h3 { margin: 0; font: 400 96px/.95 "Bebas Neue"; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .tiles div { text-align: center; padding: 12px 0 10px; background: rgba(0,0,0,.35); border: 1.5px solid rgba(244,237,226,.08); border-radius: 8px; }
+  .tiles b { display: block; font: 400 84px/.9 "Bebas Neue"; }
+  .tiles small { display: block; font: 600 21px/1 "Barlow Condensed"; letter-spacing: .3em; color: var(--muted); margin: 6px 0 4px; }
+  .tiles .price { font-size: 66px; }
+  .dips table { width: 100%; border-collapse: collapse; }
+  .dips th { font: 700 21px/1 "Barlow Condensed"; letter-spacing: .25em; color: var(--gold); text-align: right; padding: 4px 0 2px; width: 150px; }
+  .dips td { font: 500 27px/1 "Barlow"; padding: 5px 0; border-bottom: 1.5px solid var(--line); }
+  .dips tr:last-child td { border-bottom: 0; }
+  .dips td.p { text-align: right; font: 400 48px/1 "Bebas Neue"; }
+  .dips .tag { margin-left: 14px; }
+  footer { margin-top: auto; padding: 14px 0 18px; border-top: 1.5px solid var(--line); display: flex; justify-content: space-between; gap: 40px; font: 400 21px/1.3 "Barlow"; color: var(--muted); }
+  footer b { font-weight: 500; color: var(--cream); }
+
+  /* Foto-Platzhalter: sobald ../fotos/<name>.jpg existiert, erscheint das Foto automatisch */
+  .ph { position: relative; background: #1a1713; border: 2.5px dashed rgba(207,164,97,.55); overflow: hidden; display: grid; place-items: center; flex: none; }
+  .ph:has(img) { border-style: solid; border-color: rgba(207,164,97,.35); }
+  .ph.r { border-radius: 50%; }
+  .ph.s { border-radius: 14px; }
+  .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+  .ph-in { display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(244,237,226,.5); text-align: center; padding: 0 10px; }
+  .ph-in svg { width: 46px; height: 46px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+  .ph-in em { font: 600 17px/1.15 "Barlow Condensed"; letter-spacing: .1em; text-transform: uppercase; font-style: normal; }
+  .badge { position: absolute; z-index: 2; width: 54px; height: 54px; border-radius: 50%; background: var(--gold); color: #17130e;
+           display: grid; place-items: center; font: 700 30px/1 "Barlow Condensed"; box-shadow: 0 0 0 5px var(--bg); }
+
+  /* Handschrift-Notizen und Pfeile */
+  .note { position: absolute; z-index: 3; font: 700 44px/1.02 "Caveat"; color: var(--gold); white-space: nowrap; transform: rotate(-5deg); }
+  .note.cream { color: var(--cream); }
+  .arrow { position: absolute; z-index: 3; overflow: visible; fill: none; stroke: var(--cream); stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+  .arrow.gold { stroke: var(--gold); }
+  .doodle { position: absolute; z-index: 3; fill: var(--gold); }
+
+  @page { size: 594mm 841mm; margin: 0; }
+  @media print { body { background: none; } .board { zoom: 1 !important; break-after: page; } .board + .board { margin-top: 0; } }
+
+  .sec { margin-top: 30px; }
+  .sec-head { display: flex; align-items: flex-end; gap: 40px; }
+  .sec-head .intro { margin: 0 0 12px; max-width: 900px; }
+  .hero { position: relative; margin-top: 8px; }
+  .callout { position: absolute; z-index: 3; font: 700 50px/1.0 "Caveat"; color: var(--cream); }
+  .callout.r { text-align: left; }
+  .callout.l { text-align: right; }
+  .stamp { position: absolute; z-index: 4; width: 250px; height: 250px; border-radius: 50%; background: var(--gold); color: #17130e;
+           display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-8deg);
+           box-shadow: 0 0 0 8px var(--bg), 0 0 0 10px rgba(207,164,97,.5); }
+  .stamp small { font: 700 22px/1 "Barlow Condensed"; letter-spacing: .25em; text-transform: uppercase; }
+  .stamp strong { font: 400 40px/1.05 "DM Serif Display"; text-align: center; margin: 6px 0 2px; }
+  .stamp b { font: 400 76px/1 "Bebas Neue"; }
+  .cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; margin-top: 26px; }
+  .card { position: relative; }
+  .card .ph { width: 100%; height: 440px; }
+  .card .name { display: block; font-size: 44px; margin: 18px 0 6px; }
+  .card .pr { display: flex; align-items: center; gap: 0; }
+  .card .price { font-size: 62px; }
+  .card .tag { margin-left: 18px; font-size: 21px; padding: 5px 14px 4px 10px; }
+  .card .tag svg { width: 24px; height: 24px; }
+  .card .desc { font-size: 22px; }
+  .card .sub { font-size: 18px; margin-top: 8px; letter-spacing: .24em; }
+  .sticker { position: absolute; z-index: 4; font: 700 44px/1 "Caveat"; color: #17130e; background: var(--hot); padding: 10px 18px 12px; border-radius: 8px; transform: rotate(6deg); box-shadow: 0 6px 0 rgba(0,0,0,.35); }
+  .duo { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; margin-top: 34px; align-items: start; }
+  .wings { padding: 20px 34px 20px; }
+  .wings-head { display: flex; align-items: center; gap: 30px; }
+  .wings .claim { margin: 0; font-size: 46px; }
+  .wings .desc { margin: 12px 0 16px; }
+  .wings-foot { text-align: center; font: 500 25px/1 "Barlow"; margin: 16px 0 0; }
+  .mini-title { display: flex; align-items: center; gap: 60px; }
+  .mini-title::before, .mini-title::after { content: ""; flex: 1; height: 2px; background: var(--gold); }
+  .mini-title h1 { font-size: 104px; }
+  .list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 70px; margin-top: 10px; }
+  .li { position: relative; display: grid; grid-template-columns: 190px 1fr; column-gap: 28px; align-items: center; padding: 12px 0; border-bottom: 1.5px solid var(--line); }
+  .li .phw { position: relative; width: 190px; height: 190px; }
+  .li .name { font-size: 54px; }
+  .li .price { font-size: 62px; }
+  .list.sm .li { grid-template-columns: 132px 1fr; padding: 10px 0; }
+  .list.sm .phw { width: 132px; height: 132px; }
+  .list.sm .badge { width: 44px; height: 44px; font-size: 24px; }
+  .list.sm .name { font-size: 44px; }
+  .list.sm .price { font-size: 52px; }
+  .list.sm .sub { font-size: 17px; margin-top: 6px; }
+  .list.sm .desc { font-size: 21px; margin-top: 4px; }
+  .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 30px; }
+  .bottom h2 { font-size: 92px; margin: 0; }
+  .bottom .claim { margin: 0; font-size: 40px; }
+  .bh { display: flex; align-items: baseline; gap: 26px; }
+  .drinks td { font: 500 28px/1.1 "Barlow"; padding: 7px 0; border-bottom: 1.5px solid var(--line); }
+  .drinks td small { font: 600 20px/1 "Barlow Condensed"; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; margin-left: 14px; }
+  .drinks td.p { text-align: right; font: 400 50px/1 "Bebas Neue"; color: var(--gold); }
+  .drinks tr:last-child td { border-bottom: 0; }
+  .drinks table { width: 100%; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chili" viewBox="0 0 24 24"><path d="M4.6 20.3c7 1.3 13.4-3.6 13.9-11.6.1-1.5-1.6-2.4-2.8-1.5-3 2.3-5.6 6.5-10.6 8.8-1.9.9-2.2 3.9-.5 4.3z"/><path d="M16.2 7.6c-.2-2 .9-3.7 3-4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20.5 3.5C11.5 3.3 4.6 7.6 4.6 14.6c0 1.9.6 3.5 1.5 4.7 1.6-5.2 5.2-8.7 10.3-10.6-4.3 2.8-7.4 6.4-8.7 11.5 1.2.6 2.6.9 4.1.9 6.4 0 9.6-6.4 8.7-17.6z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M3 8.5h4l1.8-2.8h6.4L17 8.5h4v10.8H3z"/><circle cx="12" cy="13.6" r="3.6"/></symbol>
+  <symbol id="a-curve" viewBox="0 0 200 120"><path vector-effect="non-scaling-stroke" d="M192 14C150 2 86 16 34 96"/><path vector-effect="non-scaling-stroke" d="M34 96l2-30M34 96l27-12"/></symbol>
+  <symbol id="a-wave" viewBox="0 0 220 80"><path vector-effect="non-scaling-stroke" d="M8 50C48 22 84 70 128 44s60-20 82-8"/><path vector-effect="non-scaling-stroke" d="M210 36l-25-8M210 36l-17 20"/></symbol>
+  <symbol id="a-loop" viewBox="0 0 220 140"><path vector-effect="non-scaling-stroke" d="M8 122C28 50 92 22 112 60c14 28-26 42-24 12 2-34 58-52 118-40"/><path vector-effect="non-scaling-stroke" d="M206 32l-25-10M206 32l-21 17"/></symbol>
+  <symbol id="a-down" viewBox="0 0 120 180"><path vector-effect="non-scaling-stroke" d="M60 6C24 52 94 98 58 170"/><path vector-effect="non-scaling-stroke" d="M58 170l-17-24M58 170l20-21"/></symbol>
+  <symbol id="d-star" viewBox="0 0 24 24"><path d="M12 1.5c.7 5.6 2.7 8.1 9 9-6.3.8-8.3 3.3-9 11.5-.7-8.2-2.7-10.7-9-11.5 6.3-.9 8.3-3.4 9-9z"/></symbol>
+</svg>
+<div class="board"><div class="frame">
+  <header>
+    <div class="title-row"><h1>Die Bratküche</h1></div>
+    <p class="claim">Selbstgemacht, wo’s zählt.</p>
+    <p class="strip">XXL-Buns selbst gebacken <i></i> Pommes hausgemacht <i></i> Jeden Tag frisch gesmasht</p>
+  </header>
+  <div class="steps">
+    <div class="step"><b>1</b><div><strong>Nummer sagen</strong><span>„Einmal die 3, bitte!“</span></div></div>
+    <svg class="arrow gold step-arrow" style="position:static"><use href="#a-wave"/></svg>
+    <div class="step"><b>2</b><div><strong>Single oder Double?</strong><span>2. Patty für 1–3 +3,00</span></div></div>
+    <svg class="arrow gold step-arrow" style="position:static"><use href="#a-wave"/></svg>
+    <div class="step"><b>3</b><div><strong>Komplett machen?</strong><span>+ Hauspommes 3,90</span></div></div>
+  </div>
+  <section class="sec">
+    <div class="kicker">Smash · Chicken · Veggie</div>
+    <div class="sec-head"><h2>Burger</h2><p class="intro">Im selbst gebackenen XXL-Brioche-Bun mit Gewürzgurken. 110 g Rind pro Patty.</p></div>
+    <div class="rule"></div>
+    <div class="hero" style="height:1000px"><div style="position:absolute;left:500px;top:0"><div class="ph s" style="width:1060px;height:960px;"><img src="../fotos/hero-burger.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto: Der Klassiker von der Seite<br>hero-burger.jpg</em></span></div></div><div class="stamp" style="left:540px;top:670px"><small>Nr. 1</small><strong>Der<br>Klassiker</strong><b>8,90</b></div><div class="callout l" style="left:0px;top:60px;width:390px;left:0">XXL-Brioche-Bun,<br>jeden Tag<br>selbst gebacken</div><svg class="arrow " style="left:400px;top:130px;width:150px;height:56px;transform:rotate(12deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0px;top:390px;width:390px;left:0">Hausgemachte<br>Burgersoße</div><svg class="arrow " style="left:400px;top:410px;width:150px;height:56px;transform:rotate(4deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0px;top:680px;width:390px;left:0">Knackige<br>Gewürzgurken</div><svg class="arrow " style="left:400px;top:700px;width:150px;height:56px;transform:rotate(-10deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:1710px;top:170px">Cheddar,<br>schön geschmolzen</div><svg class="arrow " style="left:1500px;top:195px;width:170px;height:56px;transform:scaleX(-1) rotate(-8deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:1710px;top:430px">110 g Rind –<br>frisch gesmasht</div><svg class="arrow " style="left:1500px;top:455px;width:170px;height:56px;transform:scaleX(-1) rotate(2deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:1710px;top:700px">Salat &amp; Tomate</div><svg class="arrow " style="left:1500px;top:700px;width:170px;height:56px;transform:scaleX(-1) rotate(10deg)"><use href="#a-wave"/></svg></div>
+    <div class="cards"><div class="card"><div class="ph s" style=""><img src="../fotos/01-klassiker.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 1 · Der Klassiker</em></span></div><b class="badge" style="left:14px;top:14px">1</b>
+        <span class="name">Der Klassiker</span>
+        <div class="pr"><span class="price">8,90</span></div>
+        <div class="sub">Original Smash</div>
+        <div class="desc">Cheddar, Salat, Tomate und hausgemachte Burgersoße.</div></div><div class="card"><div class="ph s" style=""><img src="../fotos/02-zwiebel-rodeo.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 2 · Zwiebel-Rodeo</em></span></div><b class="badge" style="left:14px;top:14px">2</b>
+        <span class="name">Zwiebel-Rodeo</span>
+        <div class="pr"><span class="price">9,90</span></div>
+        <div class="sub">Oklahoma Smash</div>
+        <div class="desc">Fein gehobelte Zwiebeln direkt auf der Platte mitgebraten, Cheddar, Burgersoße.</div></div><div class="card"><div class="ph s" style=""><img src="../fotos/03-scharfmacher.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 3 · Scharfmacher</em></span></div><b class="badge" style="left:14px;top:14px">3</b><div class="sticker" style="right:-10px;top:-18px">Nur für Mutige!</div>
+        <span class="name">Scharfmacher</span>
+        <div class="pr"><span class="price">9,90</span><span class="tag hot"><svg><use href="#i-chili"/></svg>SCHARF</span></div>
+        <div class="sub">Chili Cheese Smash</div>
+        <div class="desc">Chili-Cheese-Soße, Cheddar und Jalapeños.</div></div><div class="card"><div class="ph s" style=""><img src="../fotos/04-knusper-gockel.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 4 · Knusper-Gockel</em></span></div><b class="badge" style="left:14px;top:14px">4</b>
+        <span class="name">Knusper-Gockel</span>
+        <div class="pr"><span class="price">9,90</span></div>
+        <div class="sub">Crispy Chicken Burger</div>
+        <div class="desc">Hauspaniertes Hähnchenbrustfilet, Cheddar, Salat, Tomate, Burgersoße.</div></div><div class="card"><div class="ph s" style=""><img src="../fotos/05-gruenschnabel.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 5 · Der Grünschnabel</em></span></div><b class="badge" style="left:14px;top:14px">5</b>
+        <span class="name">Der Grünschnabel</span>
+        <div class="pr"><span class="price">9,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
+        <div class="sub">Veggie Grillkäse</div>
+        <div class="desc">Gegrillter Käse, gebratene Champignons, Salat, Tomate, Joghurt-Kräutersoße.</div></div></div>
+  </section>
+  <div class="duo">
+    <div class="box">
+      <div class="box-head"><span class="box-title">Mach’s komplett.</span></div>
+      <div class="box-note" style="margin:8px 0 6px">Burger kommen ohne Beilage</div>
+      <div class="row"><span>+ Hauspommes (180 g) mit Ketchup</span><span class="price">3,90</span></div>
+      <div class="row"><span>Lieber Süßkartoffel-Pommes?<br>Auch hausgemacht.</span><span class="price">+1,50</span></div>
+      <div class="row"><span>2. Patty für Burger 1–3</span><span class="price">+3,00</span></div>
+    </div>
+    <div class="box wings" style="position:relative">
+      <div class="wings-head">
+        <div style="position:relative"><div class="ph s" style="width:260px;height:170px;"><img src="../fotos/15-chicken-wings.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 15 · Wings</em></span></div><b class="badge" style="left:-8px;top:-8px">15</b></div>
+        <div><h3>Chicken Wings</h3><p class="claim">Auf unsere Art.</p></div>
+      </div>
+      <div class="note " style="left:930px;top:40px;transform:rotate(6deg)">Zum Teilen!</div><svg class="arrow " style="left:1020px;top:104px;width:56px;height:150px;transform:rotate(-6deg)"><use href="#a-down"/></svg>
+      <p class="desc">Hauspaniert. 1 Stück = Ober- oder Unterflügel ohne Spitze.</p>
+      <div class="tiles"><div><b>4</b><small>STÜCK</small><span class="price">5,90</span></div><div><b>8</b><small>STÜCK</small><span class="price">11,90</span></div><div><b>12</b><small>STÜCK</small><span class="price">16,90</span></div></div>
+      <p class="wings-foot">Ohne Beilage · Hauspommes dazu 3,90 · Dips auf dem anderen Board</p>
+    </div>
+  </div>
+  <footer>
+    <span>Alle Preise in Euro inkl. MwSt. · Kinderboxen 17–18 ohne Süßkartoffel-Tausch · Jalapeños extra 0,80</span>
+    <span><b>Allergene &amp; Zusatzstoffe:</b> Auskunft gibt unser Team. Die schriftliche Übersicht liegt zur Einsicht bereit.</span>
+  </footer>
+</div></div>
+<div class="board"><div class="frame">
+  <div class="mini-title"><h1>Die Bratküche</h1></div>
+  <section class="sec" style="margin-top:20px">
+    <div class="kicker">Hausgemachte Pommes, ordentlich beladen</div>
+    <div class="sec-head"><h2>Loaded Fries</h2><p class="intro">Zum Mitnehmen: Soße &amp; Toppings auf Wunsch separat – bleibt knuspriger.</p></div>
+    <div class="rule"></div>
+    <div class="hero" style="height:830px"><div style="position:absolute;left:540px;top:0"><div class="ph s" style="width:980px;height:800px;"><img src="../fotos/hero-loaded-fries.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto: Speckulant von oben/schräg<br>hero-loaded-fries.jpg</em></span></div></div><div class="stamp" style="left:580px;top:520px"><small>Nr. 6</small><strong>Speckulant</strong><b>8,90</b></div><div class="callout l" style="left:0px;top:110px;width:430px;left:0">Hausgemachte<br>Pommes</div><svg class="arrow " style="left:430px;top:140px;width:150px;height:56px;transform:rotate(8deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0px;top:460px;width:430px;left:0">Warme<br>Käsesoße</div><svg class="arrow " style="left:430px;top:480px;width:150px;height:56px;transform:rotate(-6deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:1670px;top:110px">Knuspriger<br>Speck</div><svg class="arrow " style="left:1460px;top:135px;width:170px;height:56px;transform:scaleX(-1) rotate(-6deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:1670px;top:460px">Röst- &amp;<br>Frühlingszwiebeln</div><svg class="arrow " style="left:1460px;top:480px;width:170px;height:56px;transform:scaleX(-1) rotate(6deg)"><use href="#a-wave"/></svg></div>
+    <div class="list"><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/06-speckulant.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 6</em></span></div><b class="badge" style="left:-8px;top:-8px">6</b></div><div>
+        <div class="head"><span class="name">Speckulant</span><span class="price">8,90</span></div>
+        <div class="sub">Cheese &amp; Bacon</div>
+        <div class="desc">Käsesoße, knuspriger Speck, Röstzwiebeln und Frühlingszwiebeln.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/07-bun-voyage.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 7</em></span></div><b class="badge" style="left:-8px;top:-8px">7</b></div><div>
+        <div class="head"><span class="name">Bun Voyage</span><span class="price">9,90</span></div>
+        <div class="sub">Burger Fries</div>
+        <div class="desc">Der Burger ohne Brötchen: würziges Rinderhack, Käse- und Burgersoße, Gewürzgurke, rote Zwiebel.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/08-chili-vanilli.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 8</em></span></div><b class="badge" style="left:-8px;top:-8px">8</b></div><div>
+        <div class="head"><span class="name">Chili Vanilli</span><span class="price">9,90</span><span class="tag hot"><svg><use href="#i-chili"/></svg>SCHARF</span></div>
+        <div class="sub">Chili Cheese Fries</div>
+        <div class="desc">Rinderhack, Chili-Cheese-Soße, Jalapeños und Frühlingszwiebeln.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/09-hendl-haufen.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 9</em></span></div><b class="badge" style="left:-8px;top:-8px">9</b></div><div>
+        <div class="head"><span class="name">Hendl-Haufen</span><span class="price">10,90</span></div>
+        <div class="sub">Crispy Chicken Fries</div>
+        <div class="desc">Panierte Chicken-Stücke, Käse- und Burgersoße, Gewürzgurke, Frühlingszwiebeln.</div></div><div class="note " style="left:680px;top:18px;font-size:40px">Macht richtig satt!</div></div><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/10-feta-morgana.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 10</em></span></div><b class="badge" style="left:-8px;top:-8px">10</b></div><div>
+        <div class="head"><span class="name">Feta Morgana</span><span class="price">8,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
+        <div class="sub">Feta &amp; Kräuter</div>
+        <div class="desc">Feta, Tomate, Gurke, rote Zwiebel, Kräutersoße und Petersilie.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:190px;height:190px;"><img src="../fotos/11-schwammerlkoenig.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 11</em></span></div><b class="badge" style="left:-8px;top:-8px">11</b></div><div>
+        <div class="head"><span class="name">Schwammerlkönig</span><span class="price">9,90</span></div>
+        <div class="sub">Rinderhack &amp; Pilze</div>
+        <div class="desc">Würziges Rinderhack, Schmorzwiebeln, Champignons, Kräutersoße und Chili-Honig.</div></div></div></div>
+  </section>
+  <section class="sec">
+    <div class="kicker">Pur, grün &amp; knusprig</div>
+    <div class="sec-head"><h2>Und sonst so</h2></div>
+    <div class="rule"></div>
+    <div class="list sm"><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/12-pommes.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 12</em></span></div><b class="badge" style="left:-8px;top:-8px">12</b></div><div>
+        <div class="head"><span class="name">Pommes. Punkt.</span><span class="price">4,90</span></div>
+        <div class="sub">Hauspommes</div>
+        <div class="desc">180 g hausgemachte Pommes mit Ketchup.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/13-knusper-gruen.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 13</em></span></div><b class="badge" style="left:-8px;top:-8px">13</b></div><div>
+        <div class="head"><span class="name">Knusper-Grün</span><span class="price">10,90</span></div>
+        <div class="sub">Crispy Chicken Salat</div>
+        <div class="desc">Blattsalate, Tomate, Gurke, Karotte, panierte Chicken-Strips, geröstete Brotwürfel, Kräutersoße.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/14-grillkaese-wiese.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 14</em></span></div><b class="badge" style="left:-8px;top:-8px">14</b></div><div>
+        <div class="head"><span class="name">Grillkäse-Wiese</span><span class="price">10,90</span><span class="tag veg"><svg><use href="#i-leaf"/></svg>VEGGIE</span></div>
+        <div class="sub">Grillkäse Salat</div>
+        <div class="desc">Blattsalate, gegrillter Käse, Tomate, Gurke, rote Zwiebel, Oliven, Honig-Senf-Soße.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/16-streifenhoernchen.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 16</em></span></div><b class="badge" style="left:-8px;top:-8px">16</b></div><div>
+        <div class="head"><span class="name">Streifenhörnchen</span><span class="price">10,90</span></div>
+        <div class="sub">Crispy Chicken Strips</div>
+        <div class="desc">4 hauspanierte Chicken-Strips mit Hauspommes (180 g) und Burgersoße.</div></div></div><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/17-kleiner-gockel.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 17</em></span></div><b class="badge" style="left:-8px;top:-8px">17</b></div><div>
+        <div class="head"><span class="name">Kleiner Gockel</span><span class="price">6,90</span></div>
+        <div class="sub">Chicken Nuggets Box</div>
+        <div class="desc">4 hauspanierte Nuggets, kleine Pommes, Gurkensticks und Ketchup.</div></div><div class="note " style="left:600px;top:14px;font-size:40px">Für kleine Helden!</div><svg class="doodle" style="left:900px;top:0px;width:30px;height:30px"><use href="#d-star"/></svg></div><div class="li"><div class="phw"><div class="ph s" style="width:132px;height:132px;"><img src="../fotos/18-kleiner-klassiker.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto 18</em></span></div><b class="badge" style="left:-8px;top:-8px">18</b></div><div>
+        <div class="head"><span class="name">Kleiner Klassiker</span><span class="price">6,90</span></div>
+        <div class="sub">Mini Burger Box</div>
+        <div class="desc">Kleiner Rindfleischburger mit Käse und Ketchup, kleine Pommes, Gurkensticks.</div></div></div></div>
+  </section>
+  <div class="bottom">
+    <div class="dips">
+      <div class="bh"><h2>Dips</h2><span class="claim">Eintunken ausdrücklich erwünscht.</span></div>
+      <div class="rule" style="margin-top:10px"></div>
+      <table>
+        <tr><td></td><th>50 ML</th><th>100 ML</th></tr>
+        <tr><td>Ketchup</td><td class="p">0,50</td><td class="p">0,90</td></tr><tr><td>Mayonnaise</td><td class="p">0,50</td><td class="p">0,90</td></tr><tr><td>Burgersoße · Joghurt-Kräuter · Honig-Senf</td><td class="p">0,80</td><td class="p">1,50</td></tr><tr><td>Käsesoße</td><td class="p">1,50</td><td class="p">2,50</td></tr><tr><td>Chili-Cheese-Soße<span class="tag hot"><svg><use href="#i-chili"/></svg>SCHARF</span></td><td class="p">1,50</td><td class="p">2,50</td></tr>
+      </table>
+    </div>
+    <div class="drinks">
+      <div class="bh"><h2>Getränke</h2><span class="claim">Eiskalt dazu.</span></div>
+      <div class="rule" style="margin-top:10px"></div>
+      <table><tr><td>Wasser<small>0,5 l · still/sprudel</small></td><td class="p">2,00</td></tr><tr><td>Coca-Cola<small>0,33 l · koffeinhaltig</small></td><td class="p">2,50</td></tr><tr><td>Sprite<small>0,33 l</small></td><td class="p">2,50</td></tr><tr><td>Paulaner Spezi<small>0,5 l · koffeinhaltig</small></td><td class="p">2,50</td></tr><tr><td>Apfelschorle<small>0,5 l</small></td><td class="p">2,50</td></tr></table>
+    </div>
+  </div>
+  <footer>
+    <span>Alle Preise in Euro inkl. MwSt. · Kinderboxen 17–18 ohne Süßkartoffel-Tausch · Jalapeños extra 0,80</span>
+    <span><b>Allergene &amp; Zusatzstoffe:</b> Auskunft gibt unser Team. Die schriftliche Übersicht liegt zur Einsicht bereit.</span>
+  </footer>
+</div></div>
+<script>
+  function fit() { if (matchMedia('print').matches) return;
+    document.querySelectorAll('.board').forEach(b => b.style.setProperty('--z', Math.min(1, window.innerWidth / 2245))); }
+  fit(); addEventListener('resize', fit);
+</script>
+</body>
+</html>
