@@ -18,7 +18,7 @@ Die Vergleichspreise stammen aus Preisportalen und Lieferplattformen (Quellen un
 | 2–5 | Zwiebel-Rodeo, Scharfmacher, Knusper-Gockel, Grünschnabel | 9,90 | 9,90 | Peter Pane „Originals“ ab 8,90, meist 12,90–15,90 | 🟢 fair |
 | – | 2. Patty | +3,00 | +3,00 | Goldies: Double 10,50 (Filiale) bzw. 11,90 (Uber Eats) statt 6,90 für den Cheeseburger, also ca. +3,60 bis +5,00 | 🟢 für Gäste günstig · 🟡 für dich knapp, siehe unten |
 | – | Hauspommes zum Burger | 3,90 | 3,90 | Burgermeister 3,80 · Goldies 3,90–4,50 | 🟢 fair |
-| 12 | Pommes. Punkt. (180 g) | 4,90 | 4,90 | Five Guys groß ca. 7,25 | 🟢 fair |
+| 12 (V6: 8) | Hauspommes (180 g), ab V6 „Marke Eigenbau“ | 4,90 | 4,90 | Five Guys groß ca. 7,25 | 🟢 fair |
 | – | Süßkartoffel-Tausch | +1,50 | +1,50 | – | 🟢 fair |
 | 6–11 | Loaded Fries | 8,90–10,90 | 8,90–10,90 | Goldies: Fries 4,50 + Käsesoße 4,00 = 8,50 | 🟢 fair |
 | 13, 14 | Salate | 10,90 | 10,90 | – | 🟢 fair (laut Kalkulation gut gedeckt) |
@@ -37,7 +37,7 @@ Die Vergleichspreise stammen aus Preisportalen und Lieferplattformen (Quellen un
 | typischer Imbiss | Aufpreis ca. 0,50 € auf die Pommes | – |
 | **Die Bratküche V5** | **50 ml für 0,50 € · 100 ml für 0,90 €** | **0,90–1,00 €** |
 
-Der kleinste Dip ist bei dir 2,5-mal so groß wie bei McDonald's und kostet trotzdem weniger. Ketchup ist bei Pommes, Pommes. Punkt. und den Kinderboxen ohnehin schon dabei. Andere Soßen gibt es als 50 ml ab 0,80 €. Das ist doppelt so viel wie ein McDonald's-Dip (25 ml für 0,60–0,80 €).
+Der kleinste Dip ist bei dir 2,5-mal so groß wie bei McDonald's und kostet trotzdem weniger. Ketchup ist bei den Hauspommes und den Kinderboxen ohnehin schon dabei. Andere Soßen gibt es als 50 ml ab 0,80 €. Das ist doppelt so viel wie ein McDonald's-Dip (25 ml für 0,60–0,80 €).
 
 ### Wo die Marge dünn ist (bewusste Imbiss-Entscheidung)
 
