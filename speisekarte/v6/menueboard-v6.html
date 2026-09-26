@@ -102,7 +102,16 @@
   @page { size: 594mm 841mm; margin: 0; }
   @media print { body { background: none; } .board { zoom: 1 !important; break-after: page; } .board + .board { margin-top: 0; } }
 
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 75px; margin-top: 34px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 75px; margin-top: 24px; }
+  .lunch { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 44px; margin-top: 24px; padding: 14px 36px;
+           border: 3px solid var(--gold); border-radius: 14px; background: linear-gradient(100deg, rgba(207,164,97,.20), rgba(207,164,97,.04) 60%); }
+  .lunch-t { font: 400 92px/.9 "Bebas Neue"; margin-top: 16px; }
+  .lunch-what { font: 500 38px/1.2 "Barlow"; }
+  .lunch-what b { font-weight: 500; color: var(--cream); }
+  .lunch-what i { font-style: normal; color: var(--gold); margin: 0 8px; }
+  .lunch-up { font: 400 26px/1.3 "Barlow"; color: var(--muted); margin-top: 8px; }
+  .lunch-up b { font-weight: 500; color: var(--gold); }
+  .lunch-p { font: 400 118px/1 "Bebas Neue"; color: var(--gold); }
   .intro { font-size: 28px; line-height: 1.3; margin: 0 0 10px; }
   .item { position: relative; display: grid; grid-template-columns: 140px 1fr; column-gap: 28px; align-items: center; padding: 11px 0 12px; border-bottom: 1.5px solid var(--line); }
   .item:last-child { border-bottom: 0; }
@@ -114,8 +123,8 @@
   .item.has-note .desc { max-width: 600px; }
   .tag.new { color: #17130e; background: var(--gold); border-color: var(--gold); padding: 6px 14px 5px; }
   .tag + .tag { margin-left: 12px; }
-  .colhero { position: relative; height: 540px; margin: 8px 0 8px; }
-  .callout { position: absolute; z-index: 3; font: 700 46px/1.0 "Caveat"; color: var(--cream); }
+  .colhero { position: relative; height: 404px; margin: 8px 0 6px; }
+  .callout { position: absolute; z-index: 3; font: 700 43px/1.0 "Caveat"; color: var(--cream); }
   .callout.l { text-align: right; } .callout.r { text-align: left; }
   .stamp { position: absolute; z-index: 4; width: 220px; height: 220px; border-radius: 50%; background: var(--gold); color: #17130e;
            display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-8deg);
@@ -193,9 +202,17 @@
   <div class="steps">
     <div class="step"><b>1</b><div><strong>Nummer sagen</strong><span>„Einmal die 4, bitte!“</span></div></div>
     <svg class="arrow gold step-arrow" style="position:static"><use href="#a-wave"/></svg>
-    <div class="step"><b>2</b><div><strong>Single oder Double?</strong><span>2. Patty für 1–4 +3,00</span></div></div>
+    <div class="step"><b>2</b><div><strong>Single oder Double?</strong><span>2. Patty für 1–4 +4,00</span></div></div>
     <svg class="arrow gold step-arrow" style="position:static"><use href="#a-wave"/></svg>
     <div class="step"><b>3</b><div><strong>Pommes dazu?</strong><span>+ Hauspommes 3,90</span></div></div>
+  </div>
+  <div class="lunch">
+    <div class="lunch-l"><div class="kicker">Jeden Mittag · 11–14 Uhr</div><div class="lunch-t">Mittagsmenü</div></div>
+    <div class="lunch-m">
+      <div class="lunch-what"><b>Der Klassiker</b> <i>+</i> <b>Hauspommes</b> <i>+</i> <b>Getränk nach Wahl</b></div>
+      <div class="lunch-up">Anderer Burger: Nr. 2, 3, 5, 7 <b>+1,00</b> · Nr. 4, 6 <b>+2,00</b> · Süßkartoffel-Pommes <b>+1,50</b></div>
+    </div>
+    <div class="lunch-p">15,00</div>
   </div>
   <div class="cols">
     <div>
@@ -203,7 +220,7 @@
     <h2>Burger</h2>
     <div class="rule"></div>
     <p class="intro">Im selbst gebackenen XXL-Brioche-Bun mit Gewürzgurken. 110 g Rind pro Patty – auf der heißen Platte flach gedrückt („gesmasht“), dadurch schön kross.</p>
-    <div class="colhero"><div style="position:absolute;left:353px;top:0"><div class="ph s" style="width:640px;height:520px;"><img src="../fotos/hero-burger.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto Burger<br>hero-burger.jpg</em></span></div></div><div class="callout l" style="left:0;top:30px;width:263px">XXL-Brioche-Bun,<br>selbst gebacken</div><svg class="arrow " style="left:253px;top:60px;width:150px;height:54px;transform:rotate(10deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0;top:200px;width:263px">110 g Rind –<br>frisch gesmasht</div><svg class="arrow " style="left:253px;top:230px;width:150px;height:54px;transform:rotate(2deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0;top:370px;width:263px">Cheddar &amp;<br>Burgersoße</div><svg class="arrow " style="left:253px;top:400px;width:150px;height:54px;transform:rotate(-8deg)"><use href="#a-wave"/></svg><div class="stamp" style="left:743px;top:290px"><small>Nr. 1</small><strong>Der<br>Klassiker</strong><b>8,90</b></div></div>
+    <div class="colhero"><div style="position:absolute;left:353px;top:0"><div class="ph s" style="width:640px;height:390px;"><img src="../fotos/hero-burger.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto Burger<br>hero-burger.jpg</em></span></div></div><div class="callout l" style="left:0;top:6px;width:263px">XXL-Bun,<br>selbst gebacken</div><svg class="arrow " style="left:253px;top:36px;width:150px;height:54px;transform:rotate(10deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0;top:138px;width:263px">110 g Rind,<br>frisch gesmasht</div><svg class="arrow " style="left:253px;top:168px;width:150px;height:54px;transform:rotate(2deg)"><use href="#a-wave"/></svg><div class="callout l" style="left:0;top:270px;width:263px">Cheddar &amp;<br>Burgersoße</div><svg class="arrow " style="left:253px;top:300px;width:150px;height:54px;transform:rotate(-8deg)"><use href="#a-wave"/></svg><div class="stamp" style="left:743px;top:175px"><small>Nr. 1</small><strong>Der<br>Klassiker</strong><b>8,90</b></div></div>
     <div class="item has-note"><div class="phw" style="width:140px;height:140px"><div class="ph r" style="width:140px;height:140px;"><img src="../fotos/klassiker.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Foto</em></span></div><b class="badge" style="left:-8px;top:-8px">1</b></div><div>
         <div class="head"><span class="name">Der Klassiker</span><span class="price">8,90</span></div>
         <div class="sub">Original Smash</div>
@@ -228,7 +245,7 @@
         <div class="desc">Gegrillter Käse, gebratene Champignons, Salat, Tomate, Joghurt-Kräutersoße.</div></div></div>
     <div class="box">
       <div class="box-head"><span class="box-title">Noch mehr drauf?</span><span class="box-note">Auch auf Pommes &amp; Salat</span></div>
-      <div class="xgrid"><div class="row"><span>Guacamole</span><span class="price">+1,50</span></div><div class="row"><span>Avocado</span><span class="price">+1,50</span></div><div class="row"><span>Schafskäse</span><span class="price">+1,50</span></div><div class="row"><span>Speck</span><span class="price">+1,50</span></div><div class="row"><span>Jalapeños</span><span class="price">+0,80</span></div><div class="row"><span>2. Patty (Nr. 1–4)</span><span class="price">+3,00</span></div></div>
+      <div class="xgrid"><div class="row"><span>Guacamole</span><span class="price">+2,00</span></div><div class="row"><span>Avocado</span><span class="price">+2,00</span></div><div class="row"><span>Schafskäse</span><span class="price">+2,00</span></div><div class="row"><span>Speck</span><span class="price">+2,00</span></div><div class="row"><span>Jalapeños</span><span class="price">+0,80</span></div><div class="row"><span>2. Patty (Nr. 1–4)</span><span class="price">+4,00</span></div></div>
     </div>
   </div>
     <div>
@@ -236,7 +253,7 @@
     <h2>Hauspommes</h2>
     <div class="rule"></div>
     <p class="intro">Bei uns geschnitten und frisch frittiert. Pur, zum Burger oder mit Belag als Hauptgericht.</p>
-    <div class="colhero"><div style="position:absolute;left:0px;top:0"><div class="ph s" style="width:640px;height:520px;"><img src="../fotos/hero-pommes.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto Pommes<br>hero-pommes.jpg</em></span></div></div><div class="callout r" style="left:740px;top:30px;width:253px">Aus echten<br>Kartoffeln</div><svg class="arrow " style="left:580px;top:60px;width:150px;height:54px;transform:scaleX(-1) rotate(-10deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:740px;top:200px;width:253px">Bei uns<br>geschnitten</div><svg class="arrow " style="left:580px;top:230px;width:150px;height:54px;transform:scaleX(-1) rotate(-2deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:740px;top:370px;width:253px">180 g<br>pro Portion</div><svg class="arrow " style="left:580px;top:400px;width:150px;height:54px;transform:scaleX(-1) rotate(8deg)"><use href="#a-wave"/></svg><div class="stamp" style="left:30px;top:290px"><small>Nr. 8</small><strong>Marke<br>Eigenbau</strong><b>4,90</b></div></div>
+    <div class="colhero"><div style="position:absolute;left:0px;top:0"><div class="ph s" style="width:640px;height:390px;"><img src="../fotos/hero-pommes.jpg" alt="" onerror="this.remove()"><span class="ph-in"><svg><use href="#i-cam"/></svg><em>Hauptfoto Pommes<br>hero-pommes.jpg</em></span></div></div><div class="callout r" style="left:740px;top:6px;width:253px">Aus echten<br>Kartoffeln</div><svg class="arrow " style="left:580px;top:36px;width:150px;height:54px;transform:scaleX(-1) rotate(-10deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:740px;top:138px;width:253px">Bei uns<br>geschnitten</div><svg class="arrow " style="left:580px;top:168px;width:150px;height:54px;transform:scaleX(-1) rotate(-2deg)"><use href="#a-wave"/></svg><div class="callout r" style="left:740px;top:270px;width:253px">180 g<br>pro Portion</div><svg class="arrow " style="left:580px;top:300px;width:150px;height:54px;transform:scaleX(-1) rotate(8deg)"><use href="#a-wave"/></svg><div class="stamp" style="left:30px;top:175px"><small>Nr. 8</small><strong>Marke<br>Eigenbau</strong><b>4,90</b></div></div>
     <div class="box base">
       <div class="head"><span class="nr">8</span><span class="name">Marke Eigenbau</span><span class="price">4,90</span></div>
       <div class="desc">180 g Hauspommes aus eigener Herstellung, mit Ketchup.</div>

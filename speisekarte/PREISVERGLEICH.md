@@ -113,7 +113,9 @@ Das PDF druckst du auf A1 (594 × 841 mm) ohne Rand. Zum Bearbeiten öffnest du 
 |---|---|---|---|
 | Currywurst mit Hauspommes | 8,50 | Nürnberger Imbiss: Currywurst 5,90, mit Pommes 8,80 · Nürnberg im Schnitt 4,97 für die günstigste Currywurst (ohne Pommes) | 🟢 fair, etwas günstiger als die Nürnberger Konkurrenz |
 | Currywurst ohne Pommes | 5,50 | Nürnberg Ø 4,97 (günstigste Currywurst je Imbiss), Deutschland Ø 3,92 | 🟢 fair für die Region |
-| Extra Guacamole / Avocado / Schafskäse | je +1,50 | Hans im Glück: extra Avocadocreme 1,00 (München) bis 2,00 (Berlin) | 🟢 fair |
+| Extra Guacamole / Avocado / Schafskäse / Speck | je +2,00 | Hans im Glück: extra Avocadocreme 1,00 (München) bis 2,00 (Berlin) | 🟢 fair, oberes Ende (ca. 17–24 % Wareneinsatz) |
+| 2. Patty | +4,00 | Goldies: Double ca. +3,60 bis +5,00 gegenüber Single | 🟢 fair, jetzt ordentlich gedeckt |
+| Mittagsmenü (Klassiker + Hauspommes + Getränk) | 15,00 | einzeln 15,30 € (mit Softdrink) bzw. 14,80 € (mit Wasser) | 🟡 Gast spart nur 0,30 €, mit Wasser zahlt er 0,20 € mehr, also Wasser ausnehmen oder 14,50 € |
 | Guac ’n’ Roll, Gockel Guapo | 10,90 | 1 € über den anderen Specials, weil zwei Premium-Zutaten drauf sind | 🟢 fair (laut Kalkulation ca. 24–26 % Wareneinsatz) |
 | Salate mit Avocado | 10,90 | Preis bleibt gleich, die Avocado ist gratis dazugekommen | 🟢 großzügig, laut Kalkulation noch gut gedeckt (ca. 26–28 %) |
 
