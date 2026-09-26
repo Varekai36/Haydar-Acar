@@ -1,97 +1,97 @@
-# Preisvergleich & Rechtscheck – Speisekarte
+# Die Bratküche – Preis- und Rechtscheck
 
-Stand: September 2026 · Karte: [`index.html`](index.html) (im Browser öffnen, druckfertig auf eine A4-Seite)
+Stand: September 2026 · Grundlage: Menüboard V3 (A1) · Neues Board: [`index.html`](index.html) / [`Menueboard_V4_A1.pdf`](Menueboard_V4_A1.pdf)
 
 ## Kurzfazit
 
-- **Eure bisherige Speisekarte lag nicht im Repository.** Ich konnte deshalb keine konkreten eigenen Preise prüfen. Stattdessen gibt es hier die aktuellen Marktpreise, faire Preisspannen je Konzept und eine neue Karte mit Richtpreisen.
-- **„Rechtens“ im Sinne von erlaubt:** In Deutschland dürft ihr eure Preise frei festlegen. Eine gesetzliche Obergrenze gibt es nicht, und Wucher spielt bei normalen Burgerpreisen keine Rolle. Rechtlich entscheidend ist, **wie** die Preise angegeben werden (siehe [Rechtscheck](#rechtscheck)).
-- **„Rechtens“ im Sinne von fair:** Die Richtpreise der neuen Karte (Cheeseburger 8,90 €, Pommes 3,90 €, Softdrink 0,33 l 3,50 €, Menü-Aufpreis 5,90 €) liegen **im Mittelfeld**. Sie sind teurer als Smash-Burger-Ketten und Fast Food, aber deutlich günstiger als Five Guys, Hans im Glück oder Peter Pane. Für einen Laden mit frischem 150-g-Rindfleisch-Patty ist das angemessen.
+- **Die Preise sind fair.** Die Burger (8,90–9,90 €) liegen über den Smash-Ketten, aber deutlich unter Five Guys, Hans im Glück und Peter Pane. Mit selbst gebackenem XXL-Bun und hausgemachten Pommes ist das gut begründet. Keine Position ist überteuert.
+- **Die Preise sind erlaubt.** In Deutschland gibt es keine Preisobergrenze. Handlungsbedarf besteht aber bei der Darstellung auf dem Board: Die Getränke fehlen, der Allergen-Hinweis ist zu knapp und der Slogan „Alles selbstgemacht.“ ist riskant.
+- **Zwei Preisfehler:** Die Chicken Wings werden in größerer Menge pro Stück *teurer*, und der 2. Patty für +3,00 € ist bei aktuellen Rindfleischpreisen knapp kalkuliert.
 
-## Marktpreise 2026 (Richtwerte)
+## Preisvergleich je Position
 
-Die Preise schwanken je Filiale und Stadt. Die Webseiten der Ketten waren aus der Arbeitsumgebung nicht direkt erreichbar. Die Werte stammen deshalb aus Preisportalen und Lieferplattformen (Quellen unten).
+Die Vergleichspreise stammen aus Preisportalen und Lieferplattformen (Quellen unten). Sie schwanken je Filiale und Stadt.
 
-| Anbieter | Typ | Klassiker / Cheeseburger | Pommes | Menü (Burger + Pommes + Getränk) |
+| Nr. | Gericht | Preis V3 | Vergleich | Einschätzung |
 |---|---|---|---|---|
-| McDonald's | Fast Food | Big Mac ca. 5,30–7,00 € | – | je nach Filiale und Größe |
-| Burger King | Fast Food | Whopper ca. 6,49–7,19 € | – | ca. 11,49–13,19 € |
-| Burgermeister (Berlin) | Streetfood / Theke | Hamburger 5,60 €, Cheeseburger 6,90 € | 3,80 € (Cheese Fries 5,60 €) | ca. 12,55–13,55 € |
-| Goldies | Smash-Burger / Theke | Cheeseburger 6,90 € | 3,90 € | kein Menü; einzeln ca. 14–16 € |
-| Five Guys | Premium-Theke | Cheeseburger ca. 12,50–13,90 €, Bacon Cheeseburger ca. 12,95–15,20 € | groß ca. 7,25 € | ca. 20–25 € |
-| Peter Pane | Restaurant | „Originals“ ab 8,90 €, meist 12,90–15,90 € | – | – |
-| Hans im Glück | Restaurant | ab 10,90 € („Klassik“), meist bis 15,90 € | – | ab ca. 16,90–19,80 € |
+| 1 | Der Klassiker | 8,90 | Goldies / Burgermeister Cheeseburger 6,90 · Five Guys Cheeseburger ca. 12,50–13,90 · Hans im Glück ab 10,90 | 🟢 fair, oberes Smash-Niveau, durch XXL-Bun begründet |
+| 2–5 | Zwiebel-Rodeo, Scharfmacher, Knusper-Gockel, Grünschnabel | 9,90 | Peter Pane „Originals“ ab 8,90, meist 12,90–15,90 | 🟢 fair |
+| – | 2. Patty | +3,00 | Goldies: Double 10,50 (Filiale) bzw. 11,90 (Uber Eats) statt 6,90 für den Cheeseburger, also ca. +3,60 bis +5,00 | 🟢 für Gäste günstig · 🟡 für dich knapp, siehe unten |
+| – | Hauspommes zum Burger | 3,90 | Burgermeister 3,80 · Goldies 3,90–4,50 | 🟢 fair |
+| 12 | Pommes. Punkt. (180 g) | 4,90 | Five Guys groß ca. 7,25 | 🟢 fair |
+| – | Süßkartoffel-Tausch | +1,50 | – | 🟢 fair |
+| 6–11 | Loaded Fries | 8,90–10,90 | Goldies: Fries 4,50 + Käsesoße 4,00 = 8,50 | 🟢 fair |
+| 13, 14 | Salate | 10,90 | – | 🟢 fair (laut Kalkulation gut gedeckt) |
+| 15 | Chicken Wings 4 / 6 / 10 Stück | 5,90 / 8,90 / 14,90 | ca. 1,48–1,49 € je Stück | 🟡 **Staffel falsch:** 10 Stück kosten pro Stück mehr als 4 Stück |
+| 16 | Streifenhörnchen | 10,90 | – | 🟢 fair |
+| 17, 18 | Kinderboxen | 6,90 / 7,00 | – | 🟢 fair; 7,00 fällt aus dem ,90-Muster |
+| – | Dips 100 ml / 150 ml | 1,00–3,50 | Goldies Käsesoße 4,00 | 🟢 für Gäste günstig · 🟡 bei Mayo, Käse- und Chili-Cheese-Soße knappe Marge |
 
-## Faire Preisspannen nach Konzept
+### Warum der 2. Patty knapp ist
 
-Diese Spannen habe ich aus den Marktpreisen oben abgeleitet. Such dir die Spalte, die zu eurem Laden passt.
+110 g Rinderhack plus eine Scheibe Cheddar kosten bei **11 €/kg** Rinderhack (realistisch 2026) ca. 1,43 € netto. Bei +3,00 € Aufpreis (2,80 € netto) wäre das ein Wareneinsatz von etwa 51 %. Bei deinem alten Einkaufspreis von 5,97 €/kg wären es nur ca. 31 %. **Wenn du Rinderhack heute über ca. 8 €/kg einkaufst, empfehle ich +3,90 €.** Auf dem Board V4 habe ich die +3,00 € stehen lassen, weil das von deinem echten Einkaufspreis abhängt.
 
-| Produkt | Imbiss / Smash (Theke) | Burgerladen, frisches Patty (Theke) | Burger-Restaurant (Tischservice) | **Neue Karte** |
-|---|---|---|---|---|
-| Hamburger | 5,50–7,00 € | 7,00–8,50 € | 9,90–11,90 € | **7,90 €** |
-| Cheeseburger | 6,50–7,50 € | 7,90–9,50 € | 10,90–13,90 € | **8,90 €** |
-| Bacon- / Signature-Burger | 7,50–9,00 € | 9,50–11,90 € | 12,90–15,90 € | **10,50–11,50 €** |
-| Double Cheeseburger | 8,50–10,00 € | 10,90–12,90 € | 14,90–17,90 € | **11,90 €** |
-| Chicken Burger | 6,50–8,00 € | 8,90–10,50 € | 11,90–13,90 € | **9,90 €** |
-| Veggie Burger | 6,90–8,00 € | 8,50–10,00 € | 11,90–13,50 € | **9,50 €** |
-| Pommes | 3,50–4,00 € | 3,80–4,50 € | 4,50–5,90 € | **3,90 €** |
-| Süßkartoffel-Pommes | 4,50–5,00 € | 4,90–5,90 € | 5,90–6,90 € | **5,50 €** |
-| Softdrink 0,33 l | 2,80–3,50 € | 3,20–3,90 € | 3,90–4,90 € | **3,50 €** |
-| Menü-Aufpreis (Pommes + Getränk) | 4,50–5,50 € | 5,50–6,50 € | meist Einzelpreise | **5,90 €** |
+## Rechtscheck des Boards
 
-### So bewertest du deine eigenen Preise (Ampel)
-
-- 🟢 **Fair:** Der Preis liegt in der Spanne deines Konzepts.
-- 🟡 **Erklärungsbedürftig:** bis etwa 15 % über der Spanne. Das geht, wenn die Karte es begründet, z. B. mit 200-g-Patty, Dry-Aged-Rind, Bio, Top-Innenstadtlage oder Tischservice.
-- 🔴 **Prüfen:** mehr als 15 % über der Spanne (Gäste empfinden es als teuer) **oder darunter**. Dann reicht die Marge oft nicht (siehe Kalkulation).
-
-## Kalkulationscheck
-
-Ein Preis ist nur dann „richtig“, wenn er auch eure Kosten deckt. In der Gastronomie gilt ein **Wareneinsatz von ca. 25–32 % vom Netto-Verkaufspreis** als gesund.
-
-1. Netto-Preis ausrechnen: **Speisen ÷ 1,07**, **Getränke ÷ 1,19**
-2. Wareneinsatz = Einkaufskosten aller Zutaten inkl. Verpackung ÷ Netto-Preis
-
-**Beispiel Cheeseburger 8,90 €:** netto 8,32 €. Bei 30 % Wareneinsatz dürfen die Zutaten höchstens **ca. 2,50 €** kosten (Patty, Bun, Cheddar, Gemüse, Sauce, Verpackung). Mit frischem 150-g-Rindfleisch-Patty ist das eher knapp. Unter ca. 8,50 € wird es für einen Cheeseburger mit frischem Fleisch schwierig. Setzt eure echten Einkaufspreise ein.
-
-## Rechtscheck
-
-Das muss auf der Karte bzw. im Laden stimmen, unabhängig von der Preishöhe:
-
-| Pflicht | Was das heißt | Neue Karte |
+| Punkt | V3 | V4 |
 |---|---|---|
-| **Endpreise** (§ 7 PAngV) | Preise inkl. MwSt. und aller Zuschläge. Kein zusätzliches Service- oder Verpackungsgeld, das nicht auf der Karte steht. Extras und Aufpreise müssen mit Preis genannt sein. | ✅ Fußnote „inkl. MwSt.“, alle Extras mit Preis |
-| **Preisverzeichnis** (§ 7 PAngV) | Die Karte liegt auf den Tischen, wird vor der Bestellung vorgelegt oder hängt gut lesbar aus (z. B. Menüboard an der Theke). | ✅ als Aushang/Tischkarte druckbar |
-| **Aushang am Eingang** (§ 7 PAngV) | Neben dem Eingang hängt ein Preisverzeichnis mit den wichtigsten Speisen und Getränken. | ⚠️ Karte zusätzlich am Eingang aufhängen |
-| **Menge bei Getränken** | Jedes Getränk mit Ausschankmenge (z. B. 0,33 l). Zulässig sind u. a. 0,2 / 0,25 / 0,3 / 0,33 / 0,4 / 0,5 l. Ein Grundpreis pro Liter ist in der Gastronomie nicht nötig. | ✅ überall angegeben |
-| **Allergene** (LMIV) | Alle 14 Hauptallergene müssen schriftlich verfügbar sein, auf der Karte oder in einer Allergenmappe. | ⚠️ Codes sind **Beispiele**. Mit euren Lieferanten-Datenblättern abgleichen! |
-| **Zusatzstoffe** (LMZDV) | Kennzeichnung direkt beim Gericht, Fußnoten sind erlaubt, z. B. Farbstoff, Konservierungsstoff, Süßungsmittel, „koffeinhaltig“ bei Cola. | ⚠️ Codes für Fanta, Sprite, Bacon, Käse und Saucen aus den Produktdatenblättern übernehmen |
-| **Wahre Angaben** (Irreführungsverbot) | „Frisch gewolft“, „hausgemacht“, „100 % Rindfleisch“ nur, wenn es stimmt. | ⚠️ Slogans und Beschreibungen prüfen |
+| **Endpreise inkl. MwSt.** (§ 7 PAngV) | ✅ „Alle Preise in Euro inkl. MwSt.“ | ✅ |
+| **Aufpreise genannt** (2. Patty, Süßkartoffel, Jalapeños, Dips) | ✅ | ✅ |
+| **Getränke mit Preis und Ausschankmenge** (§ 7 PAngV, Eichrecht) | ❌ fehlen komplett, obwohl deine Kalkulation Getränke enthält | ✅ neuer Bereich „Getränke“ mit Mengen |
+| **Allergene** (LMIV / LMIDV) | ⚠️ „Frag einfach unser Team.“ Mündlich ist nur erlaubt, wenn eine **schriftliche Dokumentation** vorliegt und ein **gut sichtbarer Hinweis** darauf zeigt. | ✅ Hinweistext angepasst. Den **Allergen-Ordner** musst du selbst anlegen. |
+| **Zusatzstoffe** (LMZDV) | ⚠️ wie oben | ✅ Hinweis angepasst, Cola und Spezi als „koffeinhaltig“ gekennzeichnet |
+| **Wahre Werbeaussagen** (Irreführungsverbot, LMIV Art. 7 / UWG) | ⚠️ „Alles selbstgemacht.“ und „Zutaten regional & natürlich“. Sobald Ketchup, Mayo, Cheddar, Speck, Gurken, Oliven oder Getränke zugekauft sind, stimmt „alles“ nicht. „Regional“ musst du belegen können. | ✅ „Selbstgemacht, wo’s zählt.“ plus konkrete Aussagen (Buns, Pommes) |
+| **Preisliste am Eingang** (§ 7 Abs. 2 PAngV) | ❓ nicht erkennbar | ⚠️ z. B. eine A3-Version des Boards neben den Eingang hängen |
 
-**Mehrwertsteuer 2026:** Seit dem 1. Januar 2026 gelten für Speisen dauerhaft **7 %**, egal ob vor Ort oder zum Mitnehmen. Getränke bleiben bei **19 %**. Eine Pflicht, die Senkung an die Gäste weiterzugeben, gibt es nicht. Manche Ketten (z. B. Peter Pane) haben einzelne Preise daraufhin aber gesenkt. Bei Menüs mit Getränk muss die Kasse den Preis auf 7 % und 19 % aufteilen. Das klärt ihr am besten mit eurem Steuerberater.
+Auf diese Zutaten achten, wenn du die Zusatzstoffe dokumentierst (Angaben immer aus dem Produktdatenblatt übernehmen):
 
-## Nächster Schritt
+- **Speck:** meist „mit Konservierungsstoff“ (Nitritpökelsalz)
+- **Cheddar:** oft „mit Farbstoff“
+- **Gewürzgurken, Jalapeños:** oft „mit Konservierungsstoff“ oder „mit Süßungsmittel“
+- **Schwarze Oliven:** oft „geschwärzt“
+- **Cola, Spezi:** „koffeinhaltig“
 
-Für eine echte Bewertung eurer Preise brauche ich:
+Weitere Punkte, falls sie auf dich zutreffen:
 
-1. eure **aktuelle Speisekarte** (Foto oder Text)
-2. **Stadt / Lage** (z. B. Innenstadt, Wohngebiet, Kleinstadt)
-3. **Konzept:** Theke/Imbiss oder Tischservice, Patty-Gewicht, Fleischqualität
+- **Bier (Augustiner):** Für den Alkoholausschank brauchst du eine Gaststättenerlaubnis.
+- **Flaschen zum Mitnehmen:** Das Pfand muss getrennt vom Preis angegeben werden („zzgl. Pfand“).
+- **Mindestlohn:** Seit 1.1.2026 gelten **13,90 €/h**, ab 1.1.2027 **14,60 €/h**. In deiner Kalkulationsdatei stand noch mit 12 €/h.
+- **Mehrwertsteuer:** Seit 1.1.2026 gelten für Speisen 7 % (vor Ort und to go), für Getränke 19 %.
 
-Dann trage ich eure Gerichte und Preise in die Karte ein und bewerte jede Position mit der Ampel.
+## Was in V4 geändert ist
+
+1. **Chicken Wings:** 4 / 8 / 12 Stück für 5,90 / 10,90 / 14,90 (vorher 4 / 6 / 10 für 5,90 / 8,90 / 14,90). Die Preisschilder bleiben bekannt, der Stückpreis sinkt jetzt mit der Menge: 1,48 → 1,36 → 1,24 €. Laut Kalkulation bleibt auch die 12er-Portion gut gedeckt.
+2. **Kleiner Klassiker:** 6,90 statt 7,00, damit beide Kinderboxen gleich kosten.
+3. **Neuer Bereich „Getränke“** mit Mengen (die Flaschengrößen bitte prüfen):
+
+   | Getränk | Menge | Preis |
+   |---|---|---|
+   | Wasser still/sprudel | 0,5 l | 2,90 |
+   | Coca-Cola (koffeinhaltig) | 0,33 l | 3,90 |
+   | Sprite | 0,33 l | 3,90 |
+   | Paulaner Spezi (koffeinhaltig) | 0,5 l | 3,90 |
+   | Apfelschorle | 0,5 l | 3,50 |
+   | Augustiner Hell | 0,5 l | 4,50 |
+
+   Zum Vergleich: In der Augustiner Bräustuben in München kostet Cola 0,33 l laut städtischer Erhebung (Mai 2026) 3,95 €.
+4. **Slogan:** „Selbstgemacht, wo’s zählt.“ statt „Alles selbstgemacht.“ Der Streifen lautet jetzt „XXL-Buns selbst gebacken · Pommes hausgemacht · Jeden Tag frisch gesmasht“ statt „… Zutaten regional & natürlich“. Wenn wirklich alles selbst gemacht und regional ist und du das belegen kannst, darfst du den alten Text behalten.
+5. **Fußzeile:** „Allergene & Zusatzstoffe: Auskunft gibt unser Team. Die schriftliche Übersicht liegt zur Einsicht bereit.“
+6. **Unverändert:** alle anderen Preise, Nummern, Namen, Beschreibungen und das Design (gleiche Schriften und Farben).
+
+Das PDF druckst du auf A1 (594 × 841 mm) ohne Rand. Zum Bearbeiten öffnest du `index.html` in Chrome und speicherst über „Drucken → Als PDF speichern“ (Papierformat A1, Ränder „Keine“, Hintergrundgrafiken an).
 
 ## Quellen
 
-- Hans im Glück: [fastfoodpreis-info.de](https://fastfoodpreis-info.de/hans-im-gluck-speisekarte-preise-deutschland/), [burgerspreises.de](https://burgerspreises.de/hans-im-gluck-menupreise-in-deutschland/)
-- Five Guys: [germanmenus.de](https://germanmenus.de/five-guys-menu/), [fastfood-preischeck.de](https://fastfood-preischeck.de/five-guys-preise/)
-- Peter Pane: [peterpane.de – Mehrwertsteuersenkung](https://peterpane.de/magazin/ueber-uns/mehrwertsteuersenkung-in-der-gastronomie-peter-pane-gibt-vorteile-an-gaeste-weiter/), [fastfood-preischeck.de](https://fastfood-preischeck.de/peter-pane-preise/)
-- McDonald's: [menupricetoday.com](https://menupricetoday.com/de/blog/mcdonalds-preise-2026-de), [burgerpreise.de](https://burgerpreise.de/mc-donalds-preise/)
-- Burger King: [burgerkingpreise.de](https://burgerkingpreise.de/), [snacksaver.de](https://snacksaver.de/burger-king-preisliste/)
-- Burgermeister: [burgermeister.com](https://burgermeister.com/menu/?lang=en), [burgerpreise.de](https://burgerpreise.de/burgermeister-preise/)
-- Goldies: [burgerpreise.de](https://burgerpreise.de/goldies-preise/), [grillfuerst.de](https://www.grillfuerst.de/magazin/ratgeber/tipps/goldies-smashburger-warum-deutschland-ploetzlich-auf-platte-burger-steht/)
-- Mehrwertsteuer 2026: [IHK Darmstadt](https://www.ihk.de/darmstadt/produktmarken/recht-und-fair-play/steuerinfo/mehrwertsteuersenkung-fuer-die-gastronomie-ab-2026-6927450), [DEHOGA MV](https://www.dehoga-mv.de/artikel/dauerhaft-7-prozent-mehrwertsteuer-politik-schafft-steuergerechtigkeit-fuer-die-gastronomie-2)
-- Preisangaben: [PAngV (gesetze-im-internet.de)](https://www.gesetze-im-internet.de/pangv_2022/BJNR492110021.html), [IHK Dortmund](https://www.ihk.de/dortmund/menue/branchen/dienstleistungen/gaststaettengewerbe/preisangaben-303686)
-- Kennzeichnung: [Merkblatt DEHOGA Bayern](https://www.dehoga-bayern.de/uploads/media/Merkblatt_Speisekarte_Kennzeichnung.pdf), [Merkblatt Berlin](https://www.berlin.de/ba-mitte/politik-und-verwaltung/aemter/ordnungsamt/veterinaer-und-lebensmittelaufsicht/merkblatt_-_angaben_auf_speise-_und_getr_nkekarten.pdf), [Musterspeisekarte München](https://stadt.muenchen.de/dam/jcr:29a70a61-fe27-43cd-bb0e-7a328b3b9360/Musterspeisekarte.pdf)
-- Wareneinsatz: [restauranthero.de](https://www.restauranthero.de/wareneinsatz-gastronomie)
+- Goldies München: [grillfuerst.de](https://www.grillfuerst.de/magazin/ratgeber/tipps/goldies-smashburger-warum-deutschland-ploetzlich-auf-platte-burger-steht/), [burgerpreise.de](https://burgerpreise.de/goldies-preise/), [Uber Eats](https://www.ubereats.com/de/store/goldies-smashburger-munchen/IOds1JD9UISXMbubrHhuOQ)
+- Burgermeister: [burgerpreise.de](https://burgerpreise.de/burgermeister-preise/)
+- Five Guys: [fastfood-preischeck.de](https://fastfood-preischeck.de/five-guys-preise/), [germanmenus.de](https://germanmenus.de/five-guys-menu/)
+- Hans im Glück: [fastfoodpreis-info.de](https://fastfoodpreis-info.de/hans-im-gluck-speisekarte-preise-deutschland/)
+- Peter Pane: [fastfood-preischeck.de](https://fastfood-preischeck.de/peter-pane-preise/)
+- Getränkepreise München: [Stadt München, Bierpreis Innenstadtwirte 2026](https://stadt.muenchen.de/dam/Home/Stadtverwaltung/Referat-fuer-Arbeit-und-Wirtschaft/presse/pm/PR-Meldungen-OF/Bierpreis-Innenstadtwirte_2026.pdf)
+- Rindfleischpreise: [agrarheute](https://www.agrarheute.com/markt/tiere/rekordpreise-fuer-rindfleisch-steak-luxusgut-636806), [Wochenblatt](https://www.wochenblatt-dlv.de/maerkte/rindfleisch-luxusgut-preise-rekordniveau-582385)
+- Mindestlohn: [Bundesregierung](https://www.bundesregierung.de/breg-de/aktuelles/mindestlohn-steigt-2391010)
+- Mehrwertsteuer 2026: [IHK Darmstadt](https://www.ihk.de/darmstadt/produktmarken/recht-und-fair-play/steuerinfo/mehrwertsteuersenkung-fuer-die-gastronomie-ab-2026-6927450)
+- Preisangaben: [PAngV](https://www.gesetze-im-internet.de/pangv_2022/BJNR492110021.html), [IHK Dortmund](https://www.ihk.de/dortmund/menue/branchen/dienstleistungen/gaststaettengewerbe/preisangaben-303686)
+- Allergene und Zusatzstoffe: [LGL Bayern – FAQ LMIV](https://www.lgl.bayern.de/lebensmittel/kennzeichnung/lmiv_faq.htm), [Verbraucherzentrale NRW](https://www.verbraucherzentrale.nrw/kennzeichnung-von-allergenen-und-zusatzstoffen-94938), [Musterspeisekarte Stadt München](https://stadt.muenchen.de/dam/jcr:29a70a61-fe27-43cd-bb0e-7a328b3b9360/Musterspeisekarte.pdf), [DEHOGA Bayern Merkblatt](https://www.dehoga-bayern.de/uploads/media/Merkblatt_Speisekarte_Kennzeichnung.pdf)
 
-*Keine Rechtsberatung. Bei Unsicherheiten helfen IHK, DEHOGA oder die örtliche Lebensmittelüberwachung.*
+*Keine Rechtsberatung. Bei Unsicherheiten helfen IHK, DEHOGA Bayern oder die Lebensmittelüberwachung.*
